@@ -9,7 +9,7 @@
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "client": "cd client && npm start",
     "heroku-postbuild": "cd client && npm install && npm run build",
-    "build": "none"
+    "build": "npm run dev"
   },
   "author": "Richard G. Scates",
   "license": "MIT",
