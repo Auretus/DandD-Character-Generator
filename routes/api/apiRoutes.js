@@ -1,32 +1,58 @@
 //apiRoutes.js is for routes displaying data from db and saving data to db
 const express = require("express").Router();
 const mongoose = require("mongoose");
-var db = require("../../models"); //must update: this has to have character.js model when it is available
+var db = require("../../models/Character");
 const app = express();
 
 //GET route for getting all characters
 app.get("/api/character", (req, res) => {
     console.log(res);
+    db.findAll({})
+        .then(allCharacters =>{
+            res.json(allCharacters);
+        })
 });
 
 //GET route for getting a single character
 app.get("/api/character/:id", (req, res) => {
     console.log(res);
+    db.findOne({
+        where: {
+            id: req.params.id
+        }
+    }).then(singleCharacter => {
+        res.json(singleCharacter);
+    })
 });
 
 //POST route for saving a new character
 app.post("api/createCharacter", (req, res) => {
     console.log(req.body);
+    db.create({
+        //waiting for Character.js schema/model
+    })
 });
 
 //PUT route for updating a character
 app.put("api/updateCharacter", (req, res) => {
-
+    db.update(req.body, 
+        {where: {
+            id: req.body.id
+        }
+    }).then(updatedCharacter => {
+        res.json(updatedCharacter);
+    })
 });
 
 //DELETE route for deleting a character
 app.delete("api/character/:id", (req, res) => {
-
+    db.destroy({
+        where: {
+            id: req.params.id
+        }
+    }).then(deletedCharacter => {
+        res.json(deletedCharacter);
+    });
 });
 
 
