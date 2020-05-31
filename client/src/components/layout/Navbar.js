@@ -4,15 +4,22 @@ import { Link } from 'react-router-dom';
 class Navbar extends Component {
     render() {
         return (
-            <div className="navbar-fixed ">
-                {/* <nav className="z-depth-0"> */}
-                    <div className="nav-wrapper N/A transparent center">
-                        <Link to="/" className="col s5 brand-logo center white-text">
-                            <img src="/images/star-logo1.PNG" className="responsive-img" alt="star-logo" />
-                        </Link>
-                        <p>©2002-2020 Paizo Inc.® All Rights Reserved.</p>
+            <div className="row">
+                <nav>
+                    <div class="nav-wrapper black white-text">
+                        <Link to="/dashboard" class="brand-logo center">Starfinder Starter</Link>
+                        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons large">menu</i></a>
+                        
+                        <ul class="hide-on-med-and-down right">
+                            <li><Link to="/create">Create a Character</Link></li>
+                            <li><Link to="/roster">Your Roster</Link></li>
+                        </ul>
                     </div>
-                {/* </nav> */}
+                </nav>
+                <ul class="sidenav" id="sidenav">
+                    <li><Link to="/create">Create a Character</Link></li>
+                    <li><Link to="/roster">Your Roster</Link></li>
+                </ul>
             </div>
         );
     }

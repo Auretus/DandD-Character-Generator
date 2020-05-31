@@ -7,7 +7,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 html {
-  background-image: url("/images/star-bg.png");
+  background-image: url("/images/star-bg5.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -17,11 +17,18 @@ html {
   border-style: groove;
   border-radius: 20%;
   border-color: darkblue; */
-  margin-top: 5%;
+  margin-top: 10%;
 } 
-/* .nav-wrapper {
-  
-} */
+.charcard {
+  border-width: 10px;
+  border-style: groove;
+  border-color: darkblue;
+}
+footer {
+  position: relative;
+  bottom: 0;
+  margin-top: 50px;
+}
 .input-field input:focus + label {
   color: white !important;
 }
