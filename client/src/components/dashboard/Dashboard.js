@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { logoutUser } from '../../actions/authActions';
+// import CharDiv from "../layout/Roster";
 
 class Dashboard extends Component {
     onLogoutClick = e => {
@@ -13,26 +14,29 @@ class Dashboard extends Component {
         const { user } = this.props.auth;
 
         return (
-            <div className="container valign-wrapper" style={{ height: "75vh" }}>
+            <div className="container" style={{ height: "40vh" }}>
                 <div className="row">
-                    <div className="col s12 center-align">
+                    <div className="col s12 center-align white-text">
                         <h4>
                             <b>Hey there,</b> {user.name.split(" ")[0]}
-                            <p className="flow-text grey-text text-darken-1">
-                                You are logged into a full-stack{" "} <span style={{ fontFamily: "monospace" }}>MERN</span> app
-                            </p>
                         </h4>
-                        <button className="btn btn-large waves-effect waves-light hoverable blue accent-3" style={{
-                            width: "150px",
-                            borderRadius: "3px",
-                            letterSpacing: "1.5px",
-                            marginTop: "1rem"
-                        }} onClick={this.onLogoutClick}>
-                            Logout
-                        </button>
+                        {/* <h6>Your Characters: </h6>
+                        <CharDiv /> */}
+                        <div className="buttonDiv center">
+                            <button className="btn btn-large waves-effect waves-light hoverable blue white-text" style={{
+                                width: "150px",
+                                borderRadius: "3px",
+                                letterSpacing: "1.5px",
+                                marginTop: "1rem"
+                            }} onClick={this.onLogoutClick}>
+                                Logout
+                            </button>
+                        </div>
+                        <br />
                     </div>
                 </div>
             </div>
+
         );
     }
 }
