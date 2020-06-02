@@ -47,6 +47,7 @@ app.post("api/create", (req, res) => {
         alignment = identityStats.alignment,
         deity = identityStats.deity,
         //ability scores
+        //STRENGTH
         strength = totalScoreStrength,
         totalScoreStrength = (10 + 
             abilityScores.strength.racial + 
@@ -57,9 +58,67 @@ app.post("api/create", (req, res) => {
             abilityScores.strength.misc),
         upgradedScoreStrength = totalScoreStrength + abilityScores.strength.misc,
         totalModifierStrength = Math.floor((totalScoreStrength - 10) / 2),
-        upgradedModifierStrength = Math.floor((totalScoreStrength - 10) / 2)
-
-        
+        upgradedModifierStrength = Math.floor((totalScoreStrength - 10) / 2),
+        //DEXTERITY
+        dexterity = totalScoreDexterity,
+        totalScoreDexterity = (10 + 
+            abilityScores.dexterity.racial + 
+            abilityScores.dexterity.theme + 
+            abilityScores.dexterity.points + 
+            abilityScores.dexterity.level + 
+            abilityScores.dexterity.augment + 
+            abilityScores.dexterity.misc),
+        upgradedScoreDexterity = totalScoreDexterity + abilityScores.dexterity.misc,
+        totalModifierDexterity = Math.floor((totalScoreDexterity - 10) / 2),
+        upgradedModifierDexterity = Math.floor((totalScoreDexterity - 10) / 2),
+        //CONSTITUTION
+        constitution = totalScoreConstitution,
+        totalScoreConstitution = (10 + 
+            abilityScores.constitution.racial + 
+            abilityScores.constitution.theme + 
+            abilityScores.constitution.points + 
+            abilityScores.constitution.level + 
+            abilityScores.constitution.augment + 
+            abilityScores.constitution.misc),
+        upgradedScoreConstitution = totalScoreConstitution + abilityScores.constitution.misc,
+        totalModifierConstitution = Math.floor((totalScoreConstitution - 10) / 2),
+        upgradedModifierConstitution = Math.floor((totalScoreConstitution - 10) / 2),
+        //INTELLIGENCE
+        intelligence = totalScoreIntelligence,
+        totalScoreIntelligence = (10 + 
+            abilityScores.intelligence.racial + 
+            abilityScores.intelligence.theme + 
+            abilityScores.intelligence.points + 
+            abilityScores.intelligence.level + 
+            abilityScores.intelligence.augment + 
+            abilityScores.intelligence.misc),
+        upgradedScoreIntelligence = totalScoreIntelligence + abilityScores.intelligence.misc,
+        totalModifierIntelligence = Math.floor((totalScoreIntelligence - 10) / 2),
+        upgradedModifierIntelligence = Math.floor((totalScoreIntelligence - 10) / 2),
+        //WISDOM
+        wisdom = totalScoreWisdom,
+        totalScoreWisdom = (10 + 
+            abilityScores.wisdom.racial + 
+            abilityScores.wisdom.theme + 
+            abilityScores.wisdom.points + 
+            abilityScores.wisdom.level + 
+            abilityScores.wisdom.augment + 
+            abilityScores.wisdom.misc),
+        upgradedScoreWisdom = totalScoreWisdom + abilityScores.wisdom.misc,
+        totalModifierWisdom = Math.floor((totalScoreWisdom - 10) / 2),
+        upgradedModifierWisdom = Math.floor((totalScoreWisdom - 10) / 2),
+        //CHARISMA
+        charisma = totalScoreCharisma,
+        totalScoreCharisma = (10 + 
+            abilityScores.charisma.racial + 
+            abilityScores.charisma.theme + 
+            abilityScores.charisma.points + 
+            abilityScores.charisma.level + 
+            abilityScores.charisma.augment + 
+            abilityScores.charisma.misc),
+        upgradedScoreCharisma = totalScoreCharisma + abilityScores.charisma.misc,
+        totalModifierCharisma = Math.floor((totalScoreCharisma - 10) / 2),
+        upgradedModifierCharisma = Math.floor((totalScoreCharisma - 10) / 2),        
     })
 });
 
