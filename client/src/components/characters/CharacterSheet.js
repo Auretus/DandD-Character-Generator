@@ -16,10 +16,13 @@ class CharacterSheet extends Component {
         return (
             <div className="container">
                 <div className="row">
-                    <h4>
+                    <h4 className="white-text">
                         <b>Hey there,</b> {user.name.split(" ")[0]}
                     </h4>
                     {/* Character Sheet full info goes here */}
+                    <div className="card large N/A transparent white-text">
+                        Hello World
+                    </div>
                     <div className="buttonDiv center">
                         <button className="btn btn-large waves-effect waves-light hoverable blue white-text" style={{
                             width: "150px",

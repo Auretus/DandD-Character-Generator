@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Starfinder Starter",
+  "name": "Playalong App for Starfinder",
   "icons": [
     {
       "src": "favicon.ico",

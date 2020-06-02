@@ -13,38 +13,148 @@ class Create extends Component {
 
         return (
             <div className="container">
-                <div class="row">
+                <div className="row">
                     <div className="col s12 center-align white-text">
                         <h4>
                             <b>Hey there,</b> {user.name.split(" ")[0]}
                         </h4>
-                        <form class="col s12">
-                            <div class="row">
-                                <div class="input-field col s6">
-                                    <input  id="first_name" type="text" class="validate" />
-                                    <label for="first_name">First Name</label>
+                        <form className="col s12">
+                            <div className="row">
+                                <div className="input-field col s4">
+                                    <input  id="first_name" type="text" className="validate white-text" />
+                                    <label for="first_name">Character Name</label>
                                 </div>
-                                <div class="input-field col s6">
-                                    <input id="last_name" type="text" class="validate" />
-                                    <label for="last_name">Last Name</label>
+                                <div className="input-field col s4">
+                                    <input id="last_name" type="text" className="validate white-text" />
+                                    <label for="last_name">Race</label>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="input-field col s12">
-                                    <input id="password" type="password" class="validate" />
-                                    <label for="password">Password</label>
+                                <div className="input-field col s4">
+                                    <input id="password" type="text" className="validate white-text" />
+                                    <label for="password">Gender</label>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="input-field col s12">
-                                    <input id="email" type="email" class="validate" />
-                                    <label for="email">Email</label>
+                            <div className="row">
+                                <div className="input-field col s4">
+                                    <input  id="first_name" type="text" className="validate white-text" />
+                                    <label for="first_name">Character Name</label>
                                 </div>
+                                <div className="input-field col s4">
+                                    <input id="last_name" type="text" className="validate white-text" />
+                                    <label for="last_name">Race</label>
+                                </div>
+                                <div className="input-field col s4">
+                                    <input id="password" type="text" className="validate white-text" />
+                                    <label for="password">Gender</label>
+                                </div>
+                            </div>
+                            <div className="row">
+                                <div className="input-field col s4">
+                                    <input  id="first_name" type="text" className="validate white-text" />
+                                    <label for="first_name">Character Name</label>
+                                </div>
+                                <div className="input-field col s4">
+                                    <input id="last_name" type="text" className="validate white-text" />
+                                    <label for="last_name">Race</label>
+                                </div>
+                                <div className="input-field col s4">
+                                    <input id="password" type="text" className="validate white-text" />
+                                    <label for="password">Gender</label>
+                                </div>
+                            </div>
+                            <div className="row">
+                                <div className="input-field col s4">
+                                    <input  id="first_name" type="text" className="validate white-text" />
+                                    <label for="first_name">Character Name</label>
+                                </div>
+                                <div className="input-field col s4">
+                                    <input id="last_name" type="text" className="validate white-text" />
+                                    <label for="last_name">Race</label>
+                                </div>
+                                <div className="input-field col s4">
+                                    <input id="password" type="text" className="validate white-text" />
+                                    <label for="password">Gender</label>
+                                </div>
+                            </div>
+                            <div className="row">
+                                <div className="input-field col s4">
+                                    <input  id="first_name" type="text" className="validate white-text" />
+                                    <label for="first_name">Character Name</label>
+                                </div>
+                                <div className="input-field col s4">
+                                    <input id="last_name" type="text" className="validate white-text" />
+                                    <label for="last_name">Race</label>
+                                </div>
+                                <div className="input-field col s4">
+                                    <input id="password" type="text" className="validate white-text" />
+                                    <label for="password">Gender</label>
+                                </div>
+                            </div>
+                            <div className="row">
+                                <div className="input-field col s4">
+                                    <input  id="first_name" type="text" className="validate white-text" />
+                                    <label for="first_name">Character Name</label>
+                                </div>
+                                <div className="input-field col s4">
+                                    <input id="last_name" type="text" className="validate white-text" />
+                                    <label for="last_name">Race</label>
+                                </div>
+                                <div className="input-field col s4">
+                                    <input id="password" type="text" className="validate white-text" />
+                                    <label for="password">Gender</label>
+                                </div>
+                            </div>
+                            <div className="row">
+                                <div className="input-field col s4">
+                                    <input  id="first_name" type="text" className="validate white-text" />
+                                    <label for="first_name">Character Name</label>
+                                </div>
+                                <div className="input-field col s4">
+                                    <input id="last_name" type="text" className="validate white-text" />
+                                    <label for="last_name">Race</label>
+                                </div>
+                                <div className="input-field col s4">
+                                    <input id="password" type="text" className="validate white-text" />
+                                    <label for="password">Gender</label>
+                                </div>
+                            </div>
+                            <div className="row">
+                                <div className="input-field col s4">
+                                    <input  id="first_name" type="text" className="validate white-text" />
+                                    <label for="first_name">Character Name</label>
+                                </div>
+                                <div className="input-field col s4">
+                                    <input id="last_name" type="text" className="validate white-text" />
+                                    <label for="last_name">Race</label>
+                                </div>
+                                <div className="input-field col s4">
+                                    <input id="password" type="text" className="validate white-text" />
+                                    <label for="password">Gender</label>
+                                </div>
+                            </div>
+                            <div className="row">
+                                <div className="input-field col s4">
+                                    <input  id="first_name" type="text" className="validate white-text" />
+                                    <label for="first_name">Character Name</label>
+                                </div>
+                                <div className="input-field col s4">
+                                    <input id="last_name" type="text" className="validate white-text" />
+                                    <label for="last_name">Race</label>
+                                </div>
+                                <div className="input-field col s4">
+                                    <input id="password" type="text" className="validate white-text" />
+                                    <label for="password">Gender</label>
+                                </div>
+                            </div>
+                            <div className="button">
+                                <button className="btn btn-large waves-effect waves-light hoverable white black-text right" type="submit">
+                                    Create
+                                </button>
                             </div>
                         </form>
                     </div>
                 </div>
-                <div className="buttonDiv center">
+                <br />
+                <div className="buttonDiv center col s12">
                     <button className="btn btn-large waves-effect waves-light hoverable blue white-text" style={{
                         width: "150px",
                         borderRadius: "3px",
