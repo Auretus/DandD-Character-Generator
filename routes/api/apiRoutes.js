@@ -13,12 +13,12 @@ app.get("/api/character", (req, res) => {
         })
 });
 
-//GET route for getting a single character
+//GET route for getting a single character by name
 app.get("/api/character/:id", (req, res) => {
     console.log(res);
     db.findOne({
         where: {
-            id: req.params.id
+            _id: req.params.id
         }
     }).then(singleCharacter => {
         res.json(singleCharacter);
@@ -26,18 +26,48 @@ app.get("/api/character/:id", (req, res) => {
 });
 
 //POST route for saving a new character
-app.post("api/createCharacter", (req, res) => {
+app.post("api/create", (req, res) => {
     console.log(req.body);
+    const identityStats = req.body.identityStats;
+    const abilityScores = req.body.abilityScores;
     db.create({
-        //waiting for Character.js schema/model
+        //identityStats
+        characterName = identityStats.characterName,
+        playerID = identityStats.playerID,
+        effectiveCharacterLevel = class1.level + class2.level + class3.level,
+        class1 = identityStats.class1,
+        class2 = identityStats.class2,
+        class3 = identityStats.class3,
+        race = identityStats.race,
+        size = identityStats.size,
+        theme = identityStats.theme,
+        speed = identityStats.speed,
+        gender = identityStats.gender,
+        homeWorld = identityStats.homeWorld,
+        alignment = identityStats.alignment,
+        deity = identityStats.deity,
+        //ability scores
+        strength = totalScoreStrength,
+        totalScoreStrength = (10 + 
+            abilityScores.strength.racial + 
+            abilityScores.strength.theme + 
+            abilityScores.strength.points + 
+            abilityScores.strength.level + 
+            abilityScores.strength.augment + 
+            abilityScores.strength.misc),
+        upgradedScoreStrength = totalScoreStrength + abilityScores.strength.misc,
+        totalModifierStrength = Math.floor((totalScoreStrength - 10) / 2),
+        upgradedModifierStrength = Math.floor((totalScoreStrength - 10) / 2)
+
+        
     })
 });
 
 //PUT route for updating a character
-app.put("api/updateCharacter", (req, res) => {
+app.put("api/update/:id", (req, res) => {
     db.update(req.body, 
         {where: {
-            id: req.body.id
+            _id: req.params.id
         }
     }).then(updatedCharacter => {
         res.json(updatedCharacter);
@@ -45,10 +75,10 @@ app.put("api/updateCharacter", (req, res) => {
 });
 
 //DELETE route for deleting a character
-app.delete("api/character/:id", (req, res) => {
+app.delete("api/delete/:id", (req, res) => {
     db.destroy({
         where: {
-            id: req.params.id
+            _id: req.params.id
         }
     }).then(deletedCharacter => {
         res.json(deletedCharacter);
