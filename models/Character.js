@@ -511,7 +511,7 @@ const CharacterSchema = new Schema({
     neededForNextLevel: Number,
   },
   spells: {
-    0th: {
+    Zeroth: {
       spellsKnown: Number,
       spellList: [String],
     },
