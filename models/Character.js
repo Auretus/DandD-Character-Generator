@@ -515,37 +515,37 @@ const CharacterSchema = new Schema({
       spellsKnown: Number,
       spellList: [String],
     },
-    1st: {
+    First: {
       spellsKnown: Number,
       spellsPerDay: Number,
       spellSlotsUsed: Number,
       spellList: [String],
     },
-    2nd: {
+    Second: {
       spellsKnown: Number,
       spellsPerDay: Number,
       spellSlotsUsed: Number,
       spellList: [String],
     },
-    3rd: {
+    Third: {
       spellsKnown: Number,
       spellsPerDay: Number,
       spellSlotsUsed: Number,
       spellList: [String],
     },
-    4th: {
+    Fourth: {
       spellsKnown: Number,
       spellsPerDay: Number,
       spellSlotsUsed: Number,
       spellList: [String],
     },
-    5th: {
+    Fifth: {
       spellsKnown: Number,
       spellsPerDay: Number,
       spellSlotsUsed: Number,
       spellList: [String],
     },
-    6th: {
+    Sixth: {
       spellsKnown: Number,
       spellsPerDay: Number,
       spellSlotsUsed: Number,
