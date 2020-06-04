@@ -16,30 +16,14 @@ const CharacterSchema = new Schema({
       min: 1,
       required: true,
     },
-    class1: {
+    class: [{
       name: String,
       level: {
         type: Number,
         min: 1,
         max: 20,
       },
-      required: true,
-    },
-    class2: {
-      name: String,
-      level: {
-        type: Number,
-        min: 0,
-        max: 20,
-      },
-    },
-    class3: {
-      name: String,
-      level: {
-        type: Number,
-        min: 0,
-        max: 20,
-      },
+    }],
     },
     race: String,
     size: {
@@ -194,21 +178,16 @@ const CharacterSchema = new Schema({
   },
   health: {
     hitPoints: {
-      /* total = racial + (class1PointsPerLevel * class1Levels) + (class2PointsPerLevel * class2Levels) + (class3PointsPerLevel * class3Levels)
+      /* total = racial + (class1PointsPerLevel * class1Levels) + (class2PointsPerLevel * class2Levels) + (class3PointsPerLevel * class3Levels)...
        * current = total + temp - damageTaken
        * temporary HP may push current above total, though it won't generally last
        * temporary HP are lost before SP
        */
       racial: Number,
-      class1PointsPerLevel: Number,
-      class1Levels: Number,
-      class2PointsPerLevel: Number,
-      class2Levels: Number,
-      class3PointsPerLevel: Number,
-      class3Levels: Number,
+      class: [{pointsPerLevel: Number, levels: Number}],
       total: Number,
       temp: Number,
-      damageTaken,
+      damageTaken: Number,
       current: Number,
     },
     staminaPoints: {
@@ -219,12 +198,7 @@ const CharacterSchema = new Schema({
           * leveling up should never make you lose total SP; if (classPointsPerLevel + conModifier) < 0, use 0 instead
           */
       conModifier: Number,
-      class1PointsPerLevel: Number,
-      class1Levels: Number,
-      class2PointsPerLevel: Number,
-      class2Levels: Number,
-      class3PointsPerLevel: Number,
-      class3Levels: Number,
+      class: [{pointsPerLevel: Number, levels: Number}],
       total: Number,
       current: Number,
     },
@@ -243,7 +217,6 @@ const CharacterSchema = new Schema({
       },
     },
   },
-  // BEGIN refactored schema
   armorClass: {
     energyArmorClass: {
       // total = 10 + armor bonus + dex mod + misc mod
@@ -266,11 +239,11 @@ const CharacterSchema = new Schema({
       bypassType: String,
     },
     energyResistances: {
-      acid: String,
-      cold: String,
-      electricity: String,
-      fire: String,
-      sonic: String,
+      acid: Number,
+      cold: Number,
+      electricity: Number,
+      fire: Number,
+      sonic: Number,
     },
   },
   savingThrows: {
@@ -319,7 +292,7 @@ const CharacterSchema = new Schema({
       miscMod: Number,
     },
   },
-  weapon1: {
+  weapon: [{
     name: String,
     level: Number,
     attackBonus: Number,
@@ -332,35 +305,7 @@ const CharacterSchema = new Schema({
       current: Number,
     },
     special: String,
-  },
-  weapon2: {
-    name: String,
-    level: Number,
-    attackBonus: Number,
-    damage: Number,
-    criticalMultiplier: Number,
-    criticalThreatRange: Number,
-    range: String,
-    ammo: {
-      total: Number,
-      current: Number,
-    },
-    special: String,
-  },
-  weapon3: {
-    name: String,
-    level: Number,
-    attackBonus: Number,
-    damage: Number,
-    criticalMultiplier: Number,
-    criticalThreatRange: Number,
-    range: String,
-    ammo: {
-      total: Number,
-      current: Number,
-    },
-    special: String,
-  },
+  }],
   skills: {
     skillRanksPerLevel: Number,
     // total = ranks + class bonus (always 0 or 3) + key ability mod + misc mod
@@ -501,7 +446,7 @@ const CharacterSchema = new Schema({
       miscMod: Number,
       total: Number,
     },
-    profession1: {
+    profession: [{
       trainedOnly: [{ type: Boolean, default: true }],
       acPenaltyApplies: Boolean,
       ranks: Number,
@@ -509,16 +454,7 @@ const CharacterSchema = new Schema({
       abilityMod: Number,
       miscMod: Number,
       total: Number,
-    },
-    profession2: {
-      trainedOnly: [{ type: Boolean, default: true }],
-      acPenaltyApplies: Boolean,
-      ranks: Number,
-      classBonus: Number,
-      abilityMod: Number,
-      miscMod: Number,
-      total: Number,
-    },
+    }],
     senseMotive: {
       trainedOnly: [{ type: Boolean, default: false }],
       acPenaltyApplies: Boolean,
@@ -556,7 +492,66 @@ const CharacterSchema = new Schema({
       total: Number,
     },
   },
+  abilities: [{ name: String, description: String}],
+  featsAndProficiencies: [{ name: String, description: String}],
+  languagesKnown: [String],
+  equipment: {
+    [{ description: String, level: Number, Bulk: Number}],
+    credits: Number,
+    totalBulk: Number,
+    otherWealth: [String],
+  },
+  carryingCapacity: {
+    unencumbered: Number,
+    encumbered: Number,
+    overburdened: Number,
+  },
+  experiencePoints: {
+    totalXPEarned: Number,
+    neededForNextLevel: Number,
+  },
+  spells: {
+    0th: {
+      spellsKnown: Number,
+      spellList: [String],
+    },
+    1st: {
+      spellsKnown: Number,
+      spellsPerDay: Number,
+      spellSlotsUsed: Number,
+      spellList: [String],
+    },
+    2nd: {
+      spellsKnown: Number,
+      spellsPerDay: Number,
+      spellSlotsUsed: Number,
+      spellList: [String],
+    },
+    3rd: {
+      spellsKnown: Number,
+      spellsPerDay: Number,
+      spellSlotsUsed: Number,
+      spellList: [String],
+    },
+    4th: {
+      spellsKnown: Number,
+      spellsPerDay: Number,
+      spellSlotsUsed: Number,
+      spellList: [String],
+    },
+    5th: {
+      spellsKnown: Number,
+      spellsPerDay: Number,
+      spellSlotsUsed: Number,
+      spellList: [String],
+    },
+    6th: {
+      spellsKnown: Number,
+      spellsPerDay: Number,
+      spellSlotsUsed: Number,
+      spellList: [String],
+    },
+  },
 });
-// END refactored section
 
 module.exports = Character = mongoose.model("Character", CharacterSchema);
