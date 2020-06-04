@@ -49,7 +49,6 @@ const CharacterSchema = new Schema({
       ],
     },
     deity: String,
-  },
   abilityScores: {
     /* formulae for calculating ability scores:
     totalScore = 10 + racial + theme + ability points allocated at character creation + improvements from level-up + augment bonus
@@ -496,7 +495,7 @@ const CharacterSchema = new Schema({
   featsAndProficiencies: [{ name: String, description: String}],
   languagesKnown: [String],
   equipment: {
-    [{ description: String, level: Number, Bulk: Number}],
+    item: [{ description: String, level: Number, Bulk: Number}],
     credits: Number,
     totalBulk: Number,
     otherWealth: [String],
