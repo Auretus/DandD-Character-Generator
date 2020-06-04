@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-// BEGIN refactored schema
 const CharacterSchema = new Schema({
   identityStats: {
     characterName: {
@@ -30,7 +29,7 @@ const CharacterSchema = new Schema({
       name: String,
       level: {
         type: Number,
-        min: 1,
+        min: 0,
         max: 20,
       },
     },
@@ -38,7 +37,7 @@ const CharacterSchema = new Schema({
       name: String,
       level: {
         type: Number,
-        min: 1,
+        min: 0,
         max: 20,
       },
     },
@@ -46,7 +45,6 @@ const CharacterSchema = new Schema({
     size: {
       type: String,
       enum: ["Fine", "Diminutive", "Tiny", "Small", "Medium", "Large", "Huge", "Gargantuan", "Colossal"],
-      required: true,
     },
     theme: String,
     speed: Number, // listed in feet per round
@@ -70,15 +68,15 @@ const CharacterSchema = new Schema({
   },
   abilityScores: {
     /* formulae for calculating ability scores:
-        totalScore = 10 + racial + theme + ability points allocated at character creation + improvements from level-up + augment bonus
-            Done correctly, this should generate an ability score number between 1 and 28 for most player characters. 10 is considered the baseline average for most humanoids; anything lower represents a significant deficit in that area, anything higher represents a noticeable advantage. 
-            The limit at character creation for any given stat is 18; level improvements and augments can push this number higher. Racial modifiers may be negative, all other permanent modifiers must always be positive (or 0).
-        upgradedScore = totalScore + misc 
+    totalScore = 10 + racial + theme + ability points allocated at character creation + improvements from level-up + augment bonus
+    Done correctly, this should generate an ability score number between 1 and 28 for most player characters. 10 is considered the baseline average for most humanoids; anything lower represents a significant deficit in that area, anything higher represents a noticeable advantage. 
+    The limit at character creation for any given stat is 18; level improvements and augments can push this number higher. Racial modifiers may be negative, all other permanent modifiers must always be positive (or 0).
+    upgradedScore = totalScore + misc 
             The Misc. modifier can never reduce the upgraded score to negative values; any extra penalties that would do so are ignored. 
-        Total and upgraded modifiers are calculated with the following formula:
-        modifier = Math.floor((score - 10) / 2)
+            Total and upgraded modifiers are calculated with the following formula:
+            modifier = Math.floor((score - 10) / 2)
             This means that any ability score at 10 will have a modifier of 0, anything below 10 will have a negative modifier, and anything above will have a positive modifier.
-       */
+            */
     strength: {
       racial: Number,
       theme: Number,
@@ -192,7 +190,7 @@ const CharacterSchema = new Schema({
     feats: Number,
     training: Number,
     misc: Number,
-    total: Number
+    total: Number,
   },
   health: {
     hitPoints: {
@@ -215,11 +213,11 @@ const CharacterSchema = new Schema({
     },
     staminaPoints: {
       /* total = ((class1PointsPerLevel + conModifier) * class1Levels) 
-          + ((class2PointsPerLevel + conModifier) * class2Levels)
+        + ((class2PointsPerLevel + conModifier) * class2Levels)
           + ((class3PointsPerLevel + conModifier) * class3Levels)
-       * conModifier is taken directly from abilityScores.constitution.upgradedModifier, and should be updated on-the-fly
-       * leveling up should never make you lose total SP; if (classPointsPerLevel + conModifier) < 0, use 0 instead
-       */
+          * conModifier is taken directly from abilityScores.constitution.upgradedModifier, and should be updated on-the-fly
+          * leveling up should never make you lose total SP; if (classPointsPerLevel + conModifier) < 0, use 0 instead
+          */
       conModifier: Number,
       class1PointsPerLevel: Number,
       class1Levels: Number,
@@ -236,202 +234,329 @@ const CharacterSchema = new Schema({
        */
       keyAbilityScore: Number,
       total: {
-          type: Number,
-          min: 1,
+        type: Number,
+        min: 1,
       },
       current: {
-          type: Number,
-          min: 0,
+        type: Number,
+        min: 0,
       },
     },
   },
-  // END refactored section
+  // BEGIN refactored schema
   armorClass: {
-    eac: {
-      type: Number,
+    energyArmorClass: {
+      // total = 10 + armor bonus + dex mod + misc mod
+      total: Number,
+      armorBonus: Number,
+      dexMod: Number,
+      miscMod: Number,
     },
-    kac: {
-      type: Number,
+    kineticArmorClass: {
+      // total = 10 + armor bonus + dex mod + misc mod
+      total: Number,
+      armorBonus: Number,
+      dexMod: Number,
+      miscMod: Number,
     },
-    acForCombatManeuvers: {
-      type: Number,
+    // 8 + kineticAC
+    acForCombatManeuvers: Number,
+    damageReduction: {
+      value: Number,
+      bypassType: String,
     },
-    damageResistance: {
-      type: Number,
+    energyResistances: {
+      acid: String,
+      cold: String,
+      electricity: String,
+      fire: String,
+      sonic: String,
     },
   },
   savingThrows: {
-    fortitude: {
-      type: Number,
+    /* total = base save + ability mod + misc mod
+    * key ability scores:
+    * - fortitude => constitution
+    * - reflex => dexterity
+    * - will => wisdom
+    */
+   fortitude: {
+     total: Number,
+     baseSave: Number,
+     abilityMod: Number,
+     miscMod: Number,
     },
     reflex: {
-      type: Number,
+      total: Number,
+      baseSave: Number,
+      abilityMod: Number,
+      miscMod: Number,
     },
     will: {
-      type: Number,
+      total: Number,
+      baseSave: Number,
+      abilityMod: Number,
+      miscMod: Number,
     },
   },
   attackBonuses: {
     meleeAttack: {
-      type: Number,
+      total: Number,
+      baseAttackBonus: Number,
+      strengthModifier: Number,
+      miscMod: Number,
     },
     rangedAttack: {
-      type: Number,
+      total: Number,
+      baseAttackBonus: Number,
+      dexterityModifier: Number,
+      miscMod: Number,
     },
     thrownAttack: {
-      type: Number,
+      total: Number,
+      baseAttackBonus: Number,
+      strengthModifier: Number,
+      miscMod: Number,
     },
   },
-  weapons: {
-    weaponTitle: {
-      type: String,
-    },
-    range: {
-      type: Number,
-    },
-    damage: {
-      type: Number,
-    },
+  weapon1: {
+    name: String,
+    level: Number,
+    attackBonus: Number,
+    damage: Number,
+    criticalMultiplier: Number,
+    criticalThreatRange: Number,
+    range: String,
     ammo: {
       total: Number,
       current: Number,
     },
-    attackBonus: {
-      type: Number,
+    special: String,
+  },
+  weapon2: {
+    name: String,
+    level: Number,
+    attackBonus: Number,
+    damage: Number,
+    criticalMultiplier: Number,
+    criticalThreatRange: Number,
+    range: String,
+    ammo: {
+      total: Number,
+      current: Number,
     },
-    level: {
-      type: Number,
+    special: String,
+  },
+  weapon3: {
+    name: String,
+    level: Number,
+    attackBonus: Number,
+    damage: Number,
+    criticalMultiplier: Number,
+    criticalThreatRange: Number,
+    range: String,
+    ammo: {
+      total: Number,
+      current: Number,
     },
+    special: String,
   },
   skills: {
-    skillRanksPerLevel: {},
+    skillRanksPerLevel: Number,
+    // total = ranks + class bonus (always 0 or 3) + key ability mod + misc mod
+    // ranks may not exceed Effective Character Level
+    // trainedOnly should never be modified
     acrobatics: {
+      trainedOnly: [{ type: Boolean, default: false }],
+      acPenaltyApplies: Boolean,
       ranks: Number,
       classBonus: Number,
       abilityMod: Number,
       miscMod: Number,
+      total: Number,
     },
     athletics: {
+      trainedOnly: [{ type: Boolean, default: false }],
+      acPenaltyApplies: Boolean,
       ranks: Number,
       classBonus: Number,
       abilityMod: Number,
       miscMod: Number,
+      total: Number,
     },
     bluff: {
+      trainedOnly: [{ type: Boolean, default: false }],
+      acPenaltyApplies: Boolean,
       ranks: Number,
       classBonus: Number,
       abilityMod: Number,
       miscMod: Number,
+      total: Number,
     },
     computers: {
+      trainedOnly: [{ type: Boolean, default: true }],
+      acPenaltyApplies: Boolean,
       ranks: Number,
       classBonus: Number,
       abilityMod: Number,
       miscMod: Number,
+      total: Number,
     },
     culture: {
+      trainedOnly: [{ type: Boolean, default: true }],
+      acPenaltyApplies: Boolean,
       ranks: Number,
       classBonus: Number,
       abilityMod: Number,
       miscMod: Number,
+      total: Number,
     },
     diplomacy: {
+      trainedOnly: [{ type: Boolean, default: false }],
+      acPenaltyApplies: Boolean,
       ranks: Number,
       classBonus: Number,
       abilityMod: Number,
       miscMod: Number,
+      total: Number,
     },
     disguise: {
+      trainedOnly: [{ type: Boolean, default: false }],
+      acPenaltyApplies: Boolean,
       ranks: Number,
       classBonus: Number,
       abilityMod: Number,
       miscMod: Number,
+      total: Number,
     },
     engineering: {
+      trainedOnly: [{ type: Boolean, default: true }],
+      acPenaltyApplies: Boolean,
       ranks: Number,
       classBonus: Number,
       abilityMod: Number,
       miscMod: Number,
+      total: Number,
     },
     intimidate: {
+      trainedOnly: [{ type: Boolean, default: false }],
+      acPenaltyApplies: Boolean,
       ranks: Number,
       classBonus: Number,
       abilityMod: Number,
       miscMod: Number,
+      total: Number,
     },
     lifeScience: {
+      trainedOnly: [{ type: Boolean, default: true }],
+      acPenaltyApplies: Boolean,
       ranks: Number,
       classBonus: Number,
       abilityMod: Number,
       miscMod: Number,
+      total: Number,
     },
     medicine: {
+      trainedOnly: [{ type: Boolean, default: true }],
+      acPenaltyApplies: Boolean,
       ranks: Number,
       classBonus: Number,
       abilityMod: Number,
       miscMod: Number,
+      total: Number,
     },
     mysticism: {
+      trainedOnly: [{ type: Boolean, default: true }],
+      acPenaltyApplies: Boolean,
       ranks: Number,
       classBonus: Number,
       abilityMod: Number,
       miscMod: Number,
+      total: Number,
     },
     perception: {
+      trainedOnly: [{ type: Boolean, default: false }],
+      acPenaltyApplies: Boolean,
       ranks: Number,
       classBonus: Number,
       abilityMod: Number,
       miscMod: Number,
+      total: Number,
     },
     physicalScience: {
+      trainedOnly: [{ type: Boolean, default: true }],
+      acPenaltyApplies: Boolean,
       ranks: Number,
       classBonus: Number,
       abilityMod: Number,
       miscMod: Number,
+      total: Number,
     },
     piloting: {
+      trainedOnly: [{ type: Boolean, default: false }],
+      acPenaltyApplies: Boolean,
       ranks: Number,
       classBonus: Number,
       abilityMod: Number,
       miscMod: Number,
+      total: Number,
     },
     profession1: {
+      trainedOnly: [{ type: Boolean, default: true }],
+      acPenaltyApplies: Boolean,
       ranks: Number,
       classBonus: Number,
       abilityMod: Number,
       miscMod: Number,
+      total: Number,
     },
     profession2: {
+      trainedOnly: [{ type: Boolean, default: true }],
+      acPenaltyApplies: Boolean,
       ranks: Number,
       classBonus: Number,
       abilityMod: Number,
       miscMod: Number,
+      total: Number,
     },
     senseMotive: {
+      trainedOnly: [{ type: Boolean, default: false }],
+      acPenaltyApplies: Boolean,
       ranks: Number,
       classBonus: Number,
       abilityMod: Number,
       miscMod: Number,
+      total: Number,
     },
     sleightOfHand: {
+      trainedOnly: [{ type: Boolean, default: true }],
+      acPenaltyApplies: Boolean,
       ranks: Number,
       classBonus: Number,
       abilityMod: Number,
       miscMod: Number,
+      total: Number,
     },
     stealth: {
+      trainedOnly: [{ type: Boolean, default: false }],
+      acPenaltyApplies: Boolean,
       ranks: Number,
       classBonus: Number,
       abilityMod: Number,
       miscMod: Number,
+      total: Number,
     },
     survival: {
+      trainedOnly: [{ type: Boolean, default: false }],
+      acPenaltyApplies: Boolean,
       ranks: Number,
       classBonus: Number,
       abilityMod: Number,
       miscMod: Number,
+      total: Number,
     },
   },
 });
+// END refactored section
 
 module.exports = Character = mongoose.model("Character", CharacterSchema);
