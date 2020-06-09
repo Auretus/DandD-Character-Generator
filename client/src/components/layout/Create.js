@@ -20,127 +20,127 @@ class Create extends Component {
                         </h4>
                         <form className="col s12">
                             <div className="row">
-                                <div className="input-field col s4">
+                                <div className="input-field col m4 s12">
                                     <input  id="first_name" type="text" className="validate white-text" />
                                     <label for="first_name">Character Name</label>
                                 </div>
-                                <div className="input-field col s4">
+                                <div className="input-field col m4 s12">
                                     <input id="last_name" type="text" className="validate white-text" />
                                     <label for="last_name">Race</label>
                                 </div>
-                                <div className="input-field col s4">
+                                <div className="input-field col m4 s12">
                                     <input id="password" type="text" className="validate white-text" />
                                     <label for="password">Gender</label>
                                 </div>
                             </div>
                             <div className="row">
-                                <div className="input-field col s4">
+                                <div className="input-field col m4 s12">
                                     <input  id="first_name" type="text" className="validate white-text" />
                                     <label for="first_name">Character Name</label>
                                 </div>
-                                <div className="input-field col s4">
+                                <div className="input-field col m4 s12">
                                     <input id="last_name" type="text" className="validate white-text" />
                                     <label for="last_name">Race</label>
                                 </div>
-                                <div className="input-field col s4">
+                                <div className="input-field col m4 s12">
                                     <input id="password" type="text" className="validate white-text" />
                                     <label for="password">Gender</label>
                                 </div>
                             </div>
                             <div className="row">
-                                <div className="input-field col s4">
+                                <div className="input-field col m4 s12">
                                     <input  id="first_name" type="text" className="validate white-text" />
                                     <label for="first_name">Character Name</label>
                                 </div>
-                                <div className="input-field col s4">
+                                <div className="input-field col m4 s12">
                                     <input id="last_name" type="text" className="validate white-text" />
                                     <label for="last_name">Race</label>
                                 </div>
-                                <div className="input-field col s4">
+                                <div className="input-field col m4 s12">
                                     <input id="password" type="text" className="validate white-text" />
                                     <label for="password">Gender</label>
                                 </div>
                             </div>
                             <div className="row">
-                                <div className="input-field col s4">
+                                <div className="input-field col m4 s12">
                                     <input  id="first_name" type="text" className="validate white-text" />
                                     <label for="first_name">Character Name</label>
                                 </div>
-                                <div className="input-field col s4">
+                                <div className="input-field col m4 s12">
                                     <input id="last_name" type="text" className="validate white-text" />
                                     <label for="last_name">Race</label>
                                 </div>
-                                <div className="input-field col s4">
+                                <div className="input-field col m4 s12">
                                     <input id="password" type="text" className="validate white-text" />
                                     <label for="password">Gender</label>
                                 </div>
                             </div>
                             <div className="row">
-                                <div className="input-field col s4">
+                                <div className="input-field col m4 s12">
                                     <input  id="first_name" type="text" className="validate white-text" />
                                     <label for="first_name">Character Name</label>
                                 </div>
-                                <div className="input-field col s4">
+                                <div className="input-field col m4 s12">
                                     <input id="last_name" type="text" className="validate white-text" />
                                     <label for="last_name">Race</label>
                                 </div>
-                                <div className="input-field col s4">
+                                <div className="input-field col m4 s12">
                                     <input id="password" type="text" className="validate white-text" />
                                     <label for="password">Gender</label>
                                 </div>
                             </div>
                             <div className="row">
-                                <div className="input-field col s4">
+                                <div className="input-field col m4 s12">
                                     <input  id="first_name" type="text" className="validate white-text" />
                                     <label for="first_name">Character Name</label>
                                 </div>
-                                <div className="input-field col s4">
+                                <div className="input-field col m4 s12">
                                     <input id="last_name" type="text" className="validate white-text" />
                                     <label for="last_name">Race</label>
                                 </div>
-                                <div className="input-field col s4">
+                                <div className="input-field col m4 s12">
                                     <input id="password" type="text" className="validate white-text" />
                                     <label for="password">Gender</label>
                                 </div>
                             </div>
                             <div className="row">
-                                <div className="input-field col s4">
+                                <div className="input-field col m4 s12">
                                     <input  id="first_name" type="text" className="validate white-text" />
                                     <label for="first_name">Character Name</label>
                                 </div>
-                                <div className="input-field col s4">
+                                <div className="input-field col m4 s12">
                                     <input id="last_name" type="text" className="validate white-text" />
                                     <label for="last_name">Race</label>
                                 </div>
-                                <div className="input-field col s4">
+                                <div className="input-field col m4 s12">
                                     <input id="password" type="text" className="validate white-text" />
                                     <label for="password">Gender</label>
                                 </div>
                             </div>
                             <div className="row">
-                                <div className="input-field col s4">
+                                <div className="input-field col m4 s12">
                                     <input  id="first_name" type="text" className="validate white-text" />
                                     <label for="first_name">Character Name</label>
                                 </div>
-                                <div className="input-field col s4">
+                                <div className="input-field col m4 s12">
                                     <input id="last_name" type="text" className="validate white-text" />
                                     <label for="last_name">Race</label>
                                 </div>
-                                <div className="input-field col s4">
+                                <div className="input-field col m4 s12">
                                     <input id="password" type="text" className="validate white-text" />
                                     <label for="password">Gender</label>
                                 </div>
                             </div>
                             <div className="row">
-                                <div className="input-field col s4">
+                                <div className="input-field col m4 s12">
                                     <input  id="first_name" type="text" className="validate white-text" />
                                     <label for="first_name">Character Name</label>
                                 </div>
-                                <div className="input-field col s4">
+                                <div className="input-field col m4 s12">
                                     <input id="last_name" type="text" className="validate white-text" />
                                     <label for="last_name">Race</label>
                                 </div>
-                                <div className="input-field col s4">
+                                <div className="input-field col m4 s12">
                                     <input id="password" type="text" className="validate white-text" />
                                     <label for="password">Gender</label>
                                 </div>

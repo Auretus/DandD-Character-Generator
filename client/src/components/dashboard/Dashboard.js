@@ -18,16 +18,25 @@ class Dashboard extends Component {
                 <div className="row">
                     <div className="col s12 center-align white-text">
                         <h4>
-                            <b>Hey there,</b> {user.name.split(" ")[0]}
+                            <b>Welcome Starfinder {user.name.split(" ")[0]}!</b>
                         </h4>
-                        {/* <h6>Your Characters: </h6>
-                        <CharDiv /> */}
+                        <p>
+                            Delving into alien ruins in search of lost magic. Matching wits
+                            with corporate technomancers and their robot army in the
+                            gritty streets of a space station. Strafing a dragon-crewed
+                            attack cruiser with your starship, defending a new colony
+                            from deadly alien predators, or making first contact with a
+                            previously unknown alien empire.
+                            Whether your tools are laser rifles, powered armor, esoteric
+                            magic, or simply your powers of persuasion, the Starfinder
+                            Roleplaying Game is a game of heroes who change the face
+                            of the galaxy, one adventure at a time.
+                        </p>
                         <div className="buttonDiv center">
                             <button className="btn btn-large waves-effect waves-light hoverable blue white-text" style={{
                                 width: "150px",
                                 borderRadius: "3px",
                                 letterSpacing: "1.5px",
-                                marginTop: "1rem"
                             }} onClick={this.onLogoutClick}>
                                 Logout
                             </button>
