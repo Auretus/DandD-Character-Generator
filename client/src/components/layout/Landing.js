@@ -7,9 +7,9 @@ class Landing extends Component {
             <div className="container valign-wrapper" style={{ height: "50vh" }}>
                 <div className="row">
                     <div className="col s12 center-align white-text flow-text">
-                        <h1>
+                        <h2>
                             <b>Starfinder Starter</b>
-                        </h1>
+                        </h2>
                         <h4>
                             Are you ready to join the <b>Campaign</b>?
                         </h4>

@@ -18,6 +18,13 @@ import Footer from "./components/layout/Footer";
 import Create from "./components/layout/Create";
 import Roster from "./components/layout/Roster";
 import CharacterSheet from "./components/characters/CharacterSheet";
+import HowTo from "./components/reference/HowTo";
+import Races from "./components/reference/Races";
+import Themes from "./components/reference/Themes";
+import Classes from "./components/reference/Classes";
+import Skills from "./components/reference/Skills";
+import Equipment from "./components/reference/Equipment";
+import Spells from "./components/reference/Spells";
 
 if(localStorage.jwtToken){
     const token = localStorage.jwtToken;
@@ -43,6 +50,13 @@ class App extends Component {
                         <Route exact path="/" component={Landing} />
                         <Route exact path="/register" component={Register} />
                         <Route exact path="/login" component={Login} />
+                        <Route exact path="/howtoplay" component={HowTo} />
+                        <Route exact path="/races" component={Races} />
+                        <Route exact path="/themes" component={Themes} />
+                        <Route exact path="/classes" component={Classes} />
+                        <Route exact path="/skills" component={Skills} />
+                        <Route exact path="/equipment" component={Equipment} />
+                        <Route exact path="/spells" component={Spells} />
                         <Switch>
                             <PrivateRoute exact path="/dashboard" component={Dashboard} />
                             <PrivateRoute exact path="/create" component={Create} />
