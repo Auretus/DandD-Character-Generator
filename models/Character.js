@@ -1,3 +1,5 @@
+/* Todo: use middleware methods to populate referenced values (i.e. ability mods) wherever needed
+ */
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const CharacterSchema = new Schema({
@@ -16,39 +18,44 @@ const CharacterSchema = new Schema({
       min: 1,
       required: true,
     },
-    class: [{
-      name: String,
-      level: {
-        type: Number,
-        min: 1,
-        max: 20,
+    class: [
+      {
+        name: {
+          type: String,
+          trim: true,
+        },
+        level: {
+          type: Number,
+          min: 1,
+          max: 20,
+        },
       },
-    }],
-    },
-    race: String,
-    size: {
-      type: String,
-      enum: ["Fine", "Diminutive", "Tiny", "Small", "Medium", "Large", "Huge", "Gargantuan", "Colossal"],
-    },
-    theme: String,
-    speed: Number, // listed in feet per round
-    gender: String,
-    homeWorld: String,
-    alignment: {
-      type: String,
-      enum: [
-        "Lawful Good",
-        "Neutral Good",
-        "Chaotic Good",
-        "Lawful Neutral",
-        "Neutral",
-        "Chaotic Neutral",
-        "Lawful Evil",
-        "Neutral Evil",
-        "Chaotic Evil",
-      ],
-    },
-    deity: String,
+    ],
+  },
+  race: String,
+  size: {
+    type: String,
+    enum: ["Fine", "Diminutive", "Tiny", "Small", "Medium", "Large", "Huge", "Gargantuan", "Colossal"],
+  },
+  theme: String,
+  speed: Number, // listed in feet per round
+  gender: String,
+  homeWorld: String,
+  alignment: {
+    type: String,
+    enum: [
+      "Lawful Good",
+      "Neutral Good",
+      "Chaotic Good",
+      "Lawful Neutral",
+      "Neutral",
+      "Chaotic Neutral",
+      "Lawful Evil",
+      "Neutral Evil",
+      "Chaotic Evil",
+    ],
+  },
+  deity: String,
   abilityScores: {
     /* formulae for calculating ability scores:
     totalScore = 10 + racial + theme + ability points allocated at character creation + improvements from level-up + augment bonus
@@ -183,7 +190,7 @@ const CharacterSchema = new Schema({
        * temporary HP are lost before SP
        */
       racial: Number,
-      class: [{pointsPerLevel: Number, levels: Number}],
+      class: [{ pointsPerLevel: Number, levels: Number }],
       total: Number,
       temp: Number,
       damageTaken: Number,
@@ -197,7 +204,7 @@ const CharacterSchema = new Schema({
           * leveling up should never make you lose total SP; if (classPointsPerLevel + conModifier) < 0, use 0 instead
           */
       conModifier: Number,
-      class: [{pointsPerLevel: Number, levels: Number}],
+      class: [{ pointsPerLevel: Number, levels: Number }],
       total: Number,
       current: Number,
     },
@@ -247,16 +254,16 @@ const CharacterSchema = new Schema({
   },
   savingThrows: {
     /* total = base save + ability mod + misc mod
-    * key ability scores:
-    * - fortitude => constitution
-    * - reflex => dexterity
-    * - will => wisdom
-    */
-   fortitude: {
-     total: Number,
-     baseSave: Number,
-     abilityMod: Number,
-     miscMod: Number,
+     * key ability scores:
+     * - fortitude => constitution
+     * - reflex => dexterity
+     * - will => wisdom
+     */
+    fortitude: {
+      total: Number,
+      baseSave: Number,
+      abilityMod: Number,
+      miscMod: Number,
     },
     reflex: {
       total: Number,
@@ -291,27 +298,29 @@ const CharacterSchema = new Schema({
       miscMod: Number,
     },
   },
-  weapon: [{
-    name: String,
-    level: Number,
-    attackBonus: Number,
-    damage: Number,
-    criticalMultiplier: Number,
-    criticalThreatRange: Number,
-    range: String,
-    ammo: {
-      total: Number,
-      current: Number,
+  weapon: [
+    {
+      name: String,
+      level: Number,
+      attackBonus: Number,
+      damage: Number,
+      criticalMultiplier: Number,
+      criticalThreatRange: Number,
+      range: String,
+      ammo: {
+        total: Number,
+        current: Number,
+      },
+      special: String,
     },
-    special: String,
-  }],
+  ],
   skills: {
     skillRanksPerLevel: Number,
     // total = ranks + class bonus (always 0 or 3) + key ability mod + misc mod
     // ranks may not exceed Effective Character Level
     // trainedOnly should never be modified
     acrobatics: {
-      trainedOnly: [{ type: Boolean, default: false }],
+      trainedOnly: { type: Boolean, default: false },
       acPenaltyApplies: Boolean,
       ranks: Number,
       classBonus: Number,
@@ -320,7 +329,7 @@ const CharacterSchema = new Schema({
       total: Number,
     },
     athletics: {
-      trainedOnly: [{ type: Boolean, default: false }],
+      trainedOnly: { type: Boolean, default: false },
       acPenaltyApplies: Boolean,
       ranks: Number,
       classBonus: Number,
@@ -329,7 +338,7 @@ const CharacterSchema = new Schema({
       total: Number,
     },
     bluff: {
-      trainedOnly: [{ type: Boolean, default: false }],
+      trainedOnly: { type: Boolean, default: false },
       acPenaltyApplies: Boolean,
       ranks: Number,
       classBonus: Number,
@@ -338,7 +347,7 @@ const CharacterSchema = new Schema({
       total: Number,
     },
     computers: {
-      trainedOnly: [{ type: Boolean, default: true }],
+      trainedOnly: { type: Boolean, default: true },
       acPenaltyApplies: Boolean,
       ranks: Number,
       classBonus: Number,
@@ -347,7 +356,7 @@ const CharacterSchema = new Schema({
       total: Number,
     },
     culture: {
-      trainedOnly: [{ type: Boolean, default: true }],
+      trainedOnly: { type: Boolean, default: true },
       acPenaltyApplies: Boolean,
       ranks: Number,
       classBonus: Number,
@@ -356,7 +365,7 @@ const CharacterSchema = new Schema({
       total: Number,
     },
     diplomacy: {
-      trainedOnly: [{ type: Boolean, default: false }],
+      trainedOnly: { type: Boolean, default: false },
       acPenaltyApplies: Boolean,
       ranks: Number,
       classBonus: Number,
@@ -365,7 +374,7 @@ const CharacterSchema = new Schema({
       total: Number,
     },
     disguise: {
-      trainedOnly: [{ type: Boolean, default: false }],
+      trainedOnly: { type: Boolean, default: false },
       acPenaltyApplies: Boolean,
       ranks: Number,
       classBonus: Number,
@@ -374,7 +383,7 @@ const CharacterSchema = new Schema({
       total: Number,
     },
     engineering: {
-      trainedOnly: [{ type: Boolean, default: true }],
+      trainedOnly: { type: Boolean, default: true },
       acPenaltyApplies: Boolean,
       ranks: Number,
       classBonus: Number,
@@ -383,7 +392,7 @@ const CharacterSchema = new Schema({
       total: Number,
     },
     intimidate: {
-      trainedOnly: [{ type: Boolean, default: false }],
+      trainedOnly: { type: Boolean, default: false },
       acPenaltyApplies: Boolean,
       ranks: Number,
       classBonus: Number,
@@ -392,7 +401,7 @@ const CharacterSchema = new Schema({
       total: Number,
     },
     lifeScience: {
-      trainedOnly: [{ type: Boolean, default: true }],
+      trainedOnly: { type: Boolean, default: true },
       acPenaltyApplies: Boolean,
       ranks: Number,
       classBonus: Number,
@@ -401,7 +410,7 @@ const CharacterSchema = new Schema({
       total: Number,
     },
     medicine: {
-      trainedOnly: [{ type: Boolean, default: true }],
+      trainedOnly: { type: Boolean, default: true },
       acPenaltyApplies: Boolean,
       ranks: Number,
       classBonus: Number,
@@ -410,7 +419,7 @@ const CharacterSchema = new Schema({
       total: Number,
     },
     mysticism: {
-      trainedOnly: [{ type: Boolean, default: true }],
+      trainedOnly: { type: Boolean, default: true },
       acPenaltyApplies: Boolean,
       ranks: Number,
       classBonus: Number,
@@ -419,7 +428,7 @@ const CharacterSchema = new Schema({
       total: Number,
     },
     perception: {
-      trainedOnly: [{ type: Boolean, default: false }],
+      trainedOnly: { type: Boolean, default: false },
       acPenaltyApplies: Boolean,
       ranks: Number,
       classBonus: Number,
@@ -428,7 +437,7 @@ const CharacterSchema = new Schema({
       total: Number,
     },
     physicalScience: {
-      trainedOnly: [{ type: Boolean, default: true }],
+      trainedOnly: { type: Boolean, default: true },
       acPenaltyApplies: Boolean,
       ranks: Number,
       classBonus: Number,
@@ -437,7 +446,7 @@ const CharacterSchema = new Schema({
       total: Number,
     },
     piloting: {
-      trainedOnly: [{ type: Boolean, default: false }],
+      trainedOnly: { type: Boolean, default: false },
       acPenaltyApplies: Boolean,
       ranks: Number,
       classBonus: Number,
@@ -445,17 +454,19 @@ const CharacterSchema = new Schema({
       miscMod: Number,
       total: Number,
     },
-    profession: [{
-      trainedOnly: [{ type: Boolean, default: true }],
-      acPenaltyApplies: Boolean,
-      ranks: Number,
-      classBonus: Number,
-      abilityMod: Number,
-      miscMod: Number,
-      total: Number,
-    }],
+    profession: [
+      {
+        trainedOnly: { type: Boolean, default: true },
+        acPenaltyApplies: Boolean,
+        ranks: Number,
+        classBonus: Number,
+        abilityMod: Number,
+        miscMod: Number,
+        total: Number,
+      },
+    ],
     senseMotive: {
-      trainedOnly: [{ type: Boolean, default: false }],
+      trainedOnly: { type: Boolean, default: false },
       acPenaltyApplies: Boolean,
       ranks: Number,
       classBonus: Number,
@@ -464,7 +475,7 @@ const CharacterSchema = new Schema({
       total: Number,
     },
     sleightOfHand: {
-      trainedOnly: [{ type: Boolean, default: true }],
+      trainedOnly: { type: Boolean, default: true },
       acPenaltyApplies: Boolean,
       ranks: Number,
       classBonus: Number,
@@ -473,7 +484,7 @@ const CharacterSchema = new Schema({
       total: Number,
     },
     stealth: {
-      trainedOnly: [{ type: Boolean, default: false }],
+      trainedOnly: { type: Boolean, default: false },
       acPenaltyApplies: Boolean,
       ranks: Number,
       classBonus: Number,
@@ -482,7 +493,7 @@ const CharacterSchema = new Schema({
       total: Number,
     },
     survival: {
-      trainedOnly: [{ type: Boolean, default: false }],
+      trainedOnly: { type: Boolean, default: false },
       acPenaltyApplies: Boolean,
       ranks: Number,
       classBonus: Number,
@@ -491,11 +502,11 @@ const CharacterSchema = new Schema({
       total: Number,
     },
   },
-  abilities: [{ name: String, description: String}],
-  featsAndProficiencies: [{ name: String, description: String}],
+  abilities: [{ name: String, description: String }],
+  featsAndProficiencies: [{ name: String, description: String }],
   languagesKnown: [String],
   equipment: {
-    item: [{ description: String, level: Number, Bulk: Number}],
+    item: [{ description: String, level: Number, Bulk: Number }],
     credits: Number,
     totalBulk: Number,
     otherWealth: [String],
