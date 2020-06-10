@@ -564,4 +564,8 @@ const CharacterSchema = new Schema({
   },
 });
 
+CharacterSchema.pre('save', async function() {
+  await
+});
+
 module.exports = Character = mongoose.model("Character", CharacterSchema);
