@@ -39,9 +39,19 @@ footer {
 .input-field input:focus + label {
   color: white !important;
 }
+.input-field {
+  color: white;
+}
 .row .input-field input:focus {
   border-bottom: 1px solid white !important;
-  box-shadow: 0 1px 0 0 white !important
+  box-shadow: 0 1px 0 0 white !important;
+  color: white;
+}
+ul.dropdown-content.select-dropdown li span {
+  color: black;
+}
+.select-dropdown{
+  color: white;
 }
 .center {
   font-size: x-large;
