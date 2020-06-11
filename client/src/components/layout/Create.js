@@ -109,19 +109,46 @@ class Create extends Component {
                                     <select className="validate white-text" id="deity">
                                         <option value="" disabled selected>Choose your Deity</option>
                                         <optgroup label="Core Deities">
-                                            <option value="lawfulGood">Lawful Good</option>
-                                            <option value="neutralGood">Neutral Good</option>
-                                            <option value="chaoticGood">Chaotic Good</option>
+                                            <option value="abadar">Abadar</option>
+                                            <option value="besmara">Besmara</option>
+                                            <option value="damoritosh">Damoritosh</option>
+                                            <option value="desna">Desna</option>
+                                            <option value="theDevourer">The Devourer</option>
+                                            <option value="eloritu">Eloritu</option>
+                                            <option value="hylax">Hylax</option>
+                                            <option value="ibra">Ibra</option>
+                                            <option value="iomedae">Iomedae</option>
+                                            <option value="laoShuPo">Lao Shu Po</option>
+                                            <option value="nyarlathotep">Nyarlathotep</option>
+                                            <option value="oras">Oras</option>
+                                            <option value="pharasma">Pharasma</option>
+                                            <option value="sarenrae">Sarenrae</option>
+                                            <option value="talavet">Talavet</option>
+                                            <option value="triune">Triune</option>
+                                            <option value="urgathoa">Urgathoa</option>
+                                            <option value="weydan">Weydan</option>
+                                            <option value="yaraesa">Yaraesa</option>
+                                            <option value="zon-kuthon">Zon-Kuthon</option>
                                         </optgroup>
                                         <optgroup label="Other Deities">
-                                                <option value="lawfulNeutral">Lawful Neutral</option>
-                                                <option value="neutral">Neutral</option>
-                                                <option value="chaoticNeutral">Chaotic Neutral</option>
+                                            <option value="angradd">Angradd</option>
+                                            <option value="arshea">Arshea</option>
+                                            <option value="asmodeus">Asmodeus</option>
+                                            <option value="blackButterfly">Black Butterfly</option>
+                                            <option value="calistria">Calistria</option>
+                                            <option value="theEldest">The Eldest</option>
+                                            <option value="groetus">Groetus</option>
+                                            <option value="kadrical">Kadrical</option>
+                                            <option value="lamashtu">Lamashtu</option>
+                                            <option value="lissala">Lissala</option>
+                                            <option value="nylessa">Nylessa</option>
+                                            <option value="shelyn">Shelyn</option>
                                         </optgroup>
                                         <optgroup label="Outer Gods">
-                                            <option value="lawfulEvil">Lawful Evil</option>
-                                            <option value="neutralEvil">Neutral Evil</option>
-                                            <option value="chaoticEvil">Chaotic Evil</option>
+                                            <option value="azahoth">Azahoth</option>
+                                            <option value="nhimbaloth">Nhimbaloth</option>
+                                            <option value="shub-niggurath">Shub-Niggurath</option>
+                                            <option value="yog-sothoth">Yog-Sothoth</option>
                                         </optgroup>
                                         <optgroup label="Minor Powers & Demigods">
                                             <option value="anyalaritus">Anyalaritus</option>
@@ -146,98 +173,6 @@ class Create extends Component {
                                         </optgroup>
                                     </select>
                                     <label for="deity">Deity</label>
-                                </div>
-                            </div>
-                            <div className="row">
-                                
-                                
-                                <div className="input-field col m6 s12">
-                                    <input id="password" type="text" className="validate white-text" />
-                                    <label for="password">Gender</label>
-                                </div>
-                            </div>
-                            <div className="row">
-                                <div className="input-field col m6 s12">
-                                    <input  id="first_name" type="text" className="validate white-text" />
-                                    <label for="first_name">Character Name</label>
-                                </div>
-                                <div className="input-field col m6 s12">
-                                    <input id="last_name" type="text" className="validate white-text" />
-                                    <label for="last_name">Race</label>
-                                </div>
-                                <div className="input-field col m6 s12">
-                                    <input id="password" type="text" className="validate white-text" />
-                                    <label for="password">Gender</label>
-                                </div>
-                            </div>
-                            <div className="row">
-                                <div className="input-field col m6 s12">
-                                    <input  id="first_name" type="text" className="validate white-text" />
-                                    <label for="first_name">Character Name</label>
-                                </div>
-                                <div className="input-field col m6 s12">
-                                    <input id="last_name" type="text" className="validate white-text" />
-                                    <label for="last_name">Race</label>
-                                </div>
-                                <div className="input-field col m6 s12">
-                                    <input id="password" type="text" className="validate white-text" />
-                                    <label for="password">Gender</label>
-                                </div>
-                            </div>
-                            <div className="row">
-                                <div className="input-field col m6 s12">
-                                    <input  id="first_name" type="text" className="validate white-text" />
-                                    <label for="first_name">Character Name</label>
-                                </div>
-                                <div className="input-field col m6 s12">
-                                    <input id="last_name" type="text" className="validate white-text" />
-                                    <label for="last_name">Race</label>
-                                </div>
-                                <div className="input-field col m6 s12">
-                                    <input id="password" type="text" className="validate white-text" />
-                                    <label for="password">Gender</label>
-                                </div>
-                            </div>
-                            <div className="row">
-                                <div className="input-field col m6 s12">
-                                    <input  id="first_name" type="text" className="validate white-text" />
-                                    <label for="first_name">Character Name</label>
-                                </div>
-                                <div className="input-field col m6 s12">
-                                    <input id="last_name" type="text" className="validate white-text" />
-                                    <label for="last_name">Race</label>
-                                </div>
-                                <div className="input-field col m6 s12">
-                                    <input id="password" type="text" className="validate white-text" />
-                                    <label for="password">Gender</label>
-                                </div>
-                            </div>
-                            <div className="row">
-                                <div className="input-field col m6 s12">
-                                    <input  id="first_name" type="text" className="validate white-text" />
-                                    <label for="first_name">Character Name</label>
-                                </div>
-                                <div className="input-field col m6 s12">
-                                    <input id="last_name" type="text" className="validate white-text" />
-                                    <label for="last_name">Race</label>
-                                </div>
-                                <div className="input-field col m6 s12">
-                                    <input id="password" type="text" className="validate white-text" />
-                                    <label for="password">Gender</label>
-                                </div>
-                            </div>
-                            <div className="row">
-                                <div className="input-field col m6 s12">
-                                    <input  id="first_name" type="text" className="validate white-text" />
-                                    <label for="first_name">Character Name</label>
-                                </div>
-                                <div className="input-field col m6 s12">
-                                    <input id="last_name" type="text" className="validate white-text" />
-                                    <label for="last_name">Race</label>
-                                </div>
-                                <div className="input-field col m6 s12">
-                                    <input id="password" type="text" className="validate white-text" />
-                                    <label for="password">Gender</label>
                                 </div>
                             </div>
                             <div className="button">
