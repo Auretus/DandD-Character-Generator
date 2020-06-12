@@ -17,7 +17,8 @@ class Navbar extends Component {
                             <li><Link to="/themes">Themes</Link></li>
                             <li><Link to="/classes">Classes</Link></li>
                             <li><Link to="/skills">Skills</Link></li>
-                            <li><Link to="/equipment">Equipment</Link></li>
+                            <li><Link to="/armor">Armor</Link></li>
+                            <li><Link to="/weapons">Weapons</Link></li>
                             <li><Link to="/spells">Spells</Link></li>
                         </ul>
                         
@@ -53,7 +54,11 @@ class Navbar extends Component {
                                 </li>
                                 <li className="divider" tabIndex="-1"></li>
                                 <li>
-                                    <Link to="/equipment" className="white-text">Equipment</Link>
+                                    <Link to="/armor" className="white-text">Armor</Link>
+                                </li>
+                                <li className="divider" tabIndex="-1"></li>
+                                <li>
+                                    <Link to="/weapons" className="white-text">Weapons</Link>
                                 </li>
                                 <li className="divider" tabIndex="-1"></li>
                                 <li>

@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { logoutUser } from '../../actions/authActions';
-import spells from './spells.json'
+import weapons from './weapons.json'
 
-class Spells extends Component {
+class Weapons extends Component {
     onLogoutClick = e => {
         e.preventDefault();
         this.props.logoutUser();
@@ -16,57 +16,42 @@ class Spells extends Component {
             <div className="container">
                 <div className="row">
                     <div className="row">
-                        <h2 className="white-text center-align">Spells</h2>
+                        <h2 className="white-text center-align">Weapons</h2>
                         <h5 className="white-text center-align">
-                            When your Starfinder character casts a spell, she is harnessing
-                            the latent magical energy that permeates the universe to
-                            achieve specific, measured effects. Whether you’re playing
-                            a mystic or a technomancer, or a character who has gained
-                            the ability to manipulate magical energies through some other
-                            more unusual means, casting a spell in Starfinder follows one
-                            basic process, as described below. A cast spell always has
-                            obvious effects that are noticeable by nearby creatures; it
-                            is not possible to clandestinely cast a spell.
+                            An adventurer’s weapon can be all that stands between
+                            them and death. Weapons primarily deal damage, and
+                            some have additional special properties. Some weapons also
+                            cause specific critical hit effects.
                         </h5>
                         <br/>
                     </div>
                     <div className="row">
-                       {spells.results.map(spell => {
+                       {weapons.results.map(weapon => {
                            return (
                             <div className="col s12 m4">
                                 <div className="card small N/A transparent">
                                     <div className="card-content">
                                         <span className="card-title activator white-text text-darken-4">
-                                            {spell.title}
+                                            {weapon.title} | Lvl {weapon.item_level}
                                             <i className="material-icons right white-text">expand_more</i>
                                         </span>
                                     </div>
                                     <div className="card-reveal">
                                         <span className="card-title black-text">
-                                            {spell.title}
+                                            {weapon.title}
                                             <i className="material-icons right black-text">close</i>
                                         </span>
                                         <p>
-                                            Level Requirements: {spell.level_requirements.map(level => {
-                                                return (
-                                                    <span>{level}&nbsp;</span>
-                                                )
-                                            })}
+                                            Level: {weapon.item_level}
                                         </p>
                                         <p>
-                                            School: {spell.school}
+                                            Cost: {weapon.price}
                                         </p>
                                         <p>
-                                            Casting Time: {spell.casting_time}
+                                            Damage: {weapon.damage}
                                         </p>
                                         <p>
-                                            Range: {spell.range}
-                                        </p>
-                                        <p>
-                                            Duration: {spell.duration}
-                                        </p>
-                                        <p>
-                                            {spell.brief_description}
+                                            {weapon.description}
                                         </p>
                                     </div>
                                 </div>
@@ -93,11 +78,11 @@ class Spells extends Component {
     }
 }
 
-Spells.propTypes = {
+Weapons.propTypes = {
     logoutUser: PropTypes.func.isRequired,
     auth: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => ({ auth: state.auth });
 
-export default connect(mapStateToProps, { logoutUser })(Spells);
+export default connect(mapStateToProps, { logoutUser })(Weapons);
