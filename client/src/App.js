@@ -23,7 +23,8 @@ import Races from "./components/reference/Races";
 import Themes from "./components/reference/Themes";
 import Classes from "./components/reference/Classes";
 import Skills from "./components/reference/Skills";
-import Equipment from "./components/reference/Equipment";
+import Armor from "./components/reference/Armor";
+import Weapons from "./components/reference/Weapons";
 import Spells from "./components/reference/Spells";
 
 if(localStorage.jwtToken){
@@ -55,7 +56,8 @@ class App extends Component {
                         <Route exact path="/themes" component={Themes} />
                         <Route exact path="/classes" component={Classes} />
                         <Route exact path="/skills" component={Skills} />
-                        <Route exact path="/equipment" component={Equipment} />
+                        <Route exact path="/armor" component={Armor} />
+                        <Route exact path="/weapons" component={Weapons} />
                         <Route exact path="/spells" component={Spells} />
                         <Switch>
                             <PrivateRoute exact path="/dashboard" component={Dashboard} />

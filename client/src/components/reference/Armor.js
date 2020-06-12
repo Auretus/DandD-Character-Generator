@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { logoutUser } from '../../actions/authActions';
-import spells from './spells.json'
+import armor from './armors.json'
 
-class Spells extends Component {
+class Armor extends Component {
     onLogoutClick = e => {
         e.preventDefault();
         this.props.logoutUser();
@@ -16,57 +16,55 @@ class Spells extends Component {
             <div className="container">
                 <div className="row">
                     <div className="row">
-                        <h2 className="white-text center-align">Spells</h2>
+                        <h2 className="white-text center-align">Armor</h2>
                         <h5 className="white-text center-align">
-                            When your Starfinder character casts a spell, she is harnessing
-                            the latent magical energy that permeates the universe to
-                            achieve specific, measured effects. Whether you’re playing
-                            a mystic or a technomancer, or a character who has gained
-                            the ability to manipulate magical energies through some other
-                            more unusual means, casting a spell in Starfinder follows one
-                            basic process, as described below. A cast spell always has
-                            obvious effects that are noticeable by nearby creatures; it
-                            is not possible to clandestinely cast a spell.
+                            Armor is usually the easiest and most cost-effective way
+                            for creatures to protect themselves. Whether you are
+                            skimming through space aboard a mercenary vessel, attending
+                            a diplomatic meeting on a space station, or descending to a
+                            planet’s surface to explore, armor provides you with protection
+                            against attacks and hostile environments.
+                            Modern armor is made of many different substances, including
+                            carbon fiber, ceramic, fabric, metal, and polymers. Most are
+                            constructed from a combination of materials, and some even use
+                            archaic materials such as animal hide. Creatures wear armor to
+                            protect themselves, but also to express their personal style.
                         </h5>
                         <br/>
                     </div>
                     <div className="row">
-                       {spells.results.map(spell => {
+                       {armor.results.map(armor => {
                            return (
                             <div className="col s12 m4">
                                 <div className="card small N/A transparent">
                                     <div className="card-content">
                                         <span className="card-title activator white-text text-darken-4">
-                                            {spell.title}
+                                            {armor.title} | Lvl {armor.item_level}
                                             <i className="material-icons right white-text">expand_more</i>
                                         </span>
                                     </div>
                                     <div className="card-reveal">
                                         <span className="card-title black-text">
-                                            {spell.title}
+                                            {armor.title}
                                             <i className="material-icons right black-text">close</i>
                                         </span>
                                         <p>
-                                            Level Requirements: {spell.level_requirements.map(level => {
-                                                return (
-                                                    <span>{level}&nbsp;</span>
-                                                )
-                                            })}
+                                            Level: {armor.item_level}
                                         </p>
                                         <p>
-                                            School: {spell.school}
+                                            Cost: {armor.price}
                                         </p>
                                         <p>
-                                            Casting Time: {spell.casting_time}
+                                            EAC Bonus: {armor.eac_bonus}
                                         </p>
                                         <p>
-                                            Range: {spell.range}
+                                            KAC Bonus: {armor.kac_bonus}
                                         </p>
                                         <p>
-                                            Duration: {spell.duration}
+                                            Dexterity Bonus: {armor.max_dex_bonus}
                                         </p>
                                         <p>
-                                            {spell.brief_description}
+                                            {armor.description}
                                         </p>
                                     </div>
                                 </div>
@@ -93,11 +91,11 @@ class Spells extends Component {
     }
 }
 
-Spells.propTypes = {
+Armor.propTypes = {
     logoutUser: PropTypes.func.isRequired,
     auth: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => ({ auth: state.auth });
 
-export default connect(mapStateToProps, { logoutUser })(Spells);
+export default connect(mapStateToProps, { logoutUser })(Armor);
