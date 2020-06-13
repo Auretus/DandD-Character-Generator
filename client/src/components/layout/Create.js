@@ -34,7 +34,7 @@ class Create extends Component {
                             <div className="row">
                                 <div className="input-field col s12">
                                     <input  id="character_name" type="text" className="validate white-text" />
-                                    <label for="character_name">Character Name</label>
+                                    <label for="character_name" className="white-text">Character Name</label>
                                 </div>
                                 <div className="input-field col m6 s12">
                                     <select className="validate white-text N/A transparent" id="race">
@@ -108,6 +108,7 @@ class Create extends Component {
                                 <div className="input-field col m6 s12">
                                     <select className="validate white-text" id="deity">
                                         <option value="" disabled selected>Choose your Deity</option>
+                                        <option value="N/A">N/A</option>
                                         <optgroup label="Core Deities">
                                             <option value="abadar">Abadar</option>
                                             <option value="besmara">Besmara</option>
@@ -174,9 +175,13 @@ class Create extends Component {
                                     </select>
                                     <label for="deity">Deity</label>
                                 </div>
+                                <div className="input-field col s12">
+                                    <textarea id="description" className="materialize-textarea"></textarea>
+                                    <label for="description" className="white-text">Brief Description of Character</label>
+                                </div>
                             </div>
                             <div className="button">
-                                <button className="btn btn-large waves-effect waves-light hoverable white black-text right" type="submit">
+                                <button className="btn btn-large waves-effect waves-light hoverable indigo darken-4 white-text right" type="submit">
                                     Create
                                 </button>
                             </div>
