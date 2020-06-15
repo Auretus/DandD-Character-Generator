@@ -3,12 +3,50 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { logoutUser } from '../../actions/authActions';
 import M from "materialize-css";
+import { User } from "../../../../models/User";
 
 class Create extends Component {
+    constructor() {
+        super();
+        this.state = {
+            character_name: "",
+            race: "",
+            class: "",
+            theme: "",
+            gender: "",
+            alignment: "",
+            deity: "",
+            description: ""
+        };
+    }
+
+    onChange = e => {
+        this.setState({ [e.target.name]: e.target.value });
+    }
+
+    onSubmit = e => {
+        e.preventDefault();
+
+        const newCharacter = {
+            character_name: this.state.character_name,
+            race: this.state.race,
+            class: this.state.class,
+            theme: this.state.theme,
+            gender: this.state.gender,
+            alignment: this.state.alignment,
+            deity: this.state.deity,
+            description: this.state.description
+        };
+
+        // console.log(newUser);
+        this.props.createCharacter(newCharacter, User.props._id);
+    }
+
     onLogoutClick = e => {
         e.preventDefault();
         this.props.logoutUser();
     }
+
     componentDidMount(){
         let select = document.querySelectorAll("select");
         M.FormSelect.init(select, {});
@@ -30,14 +68,14 @@ class Create extends Component {
                             she can use during her adventures.
                         </h5>
                         <br/>
-                        <form className="col s12">
+                        <form className="col s12" onSubmit={this.onSubmit}>
                             <div className="row">
                                 <div className="input-field col s12">
-                                    <input  id="character_name" type="text" className="validate white-text" />
+                                    <input onChange={this.onChange} value={this.state.character_name} id="character_name" type="text" className="validate white-text" />
                                     <label for="character_name" className="white-text">Character Name</label>
                                 </div>
                                 <div className="input-field col m6 s12">
-                                    <select className="validate white-text N/A transparent" id="race">
+                                    <select onChange={this.onChange} value={this.state.race} className="validate white-text N/A transparent" id="race">
                                         <option value="" disabled selected>Choose your Race</option>
                                         <option value="android">Android</option>
                                         <option value="human">Human</option>
@@ -50,7 +88,7 @@ class Create extends Component {
                                     <label for="race">Race</label>
                                 </div>
                                 <div className="input-field col m6 s12">
-                                    <select className="validate white-text N/A transparent" id="class">
+                                    <select onChange={this.onChange} value={this.state.class} className="validate white-text N/A transparent" id="class">
                                         <option value="" disabled selected>Choose your Class</option>
                                         <option value="envoy">Envoy</option>
                                         <option value="mechanic">Mechanic</option>
@@ -63,20 +101,23 @@ class Create extends Component {
                                     <label for="Class">Class</label>
                                 </div>
                                 <div className="input-field col m6 s12">
-                                    <select className="validate white-text" id="theme">
+                                    <select onChange={this.onChange} value={this.state.theme} className="validate white-text" id="theme">
                                         <option value="" disabled selected>Choose your Theme</option>
-                                        <option value="envoy">Envoy</option>
-                                        <option value="mechanic">Mechanic</option>
-                                        <option value="mystic">Mystic</option>
-                                        <option value="operative">Operative</option>
-                                        <option value="solarian">Solarian</option>
-                                        <option value="soldier">Soldier</option>
-                                        <option value="technomancer">Technomancer</option>
+                                        <option value="ace_pilot">Ace Pilot</option>
+                                        <option value="bounty_hunter">Bounty Hunter</option>
+                                        <option value="icon">Icon</option>
+                                        <option value="mercenary">Mercenary</option>
+                                        <option value="outlaw">Outlaw</option>
+                                        <option value="priest">Priest</option>
+                                        <option value="scholar">Scholar</option>
+                                        <option value="spacefarer">Spacefarer</option>
+                                        <option value="xenoseeker">Xenoseeker</option>
+                                        <option value="themeless">Themeless</option>
                                     </select>
                                     <label for="theme">Theme</label>
                                 </div>
                                 <div className="input-field col m6 s12">
-                                    <select className="validate white-text" id="gender">
+                                    <select onChange={this.onChange} value={this.state.gender} className="validate white-text" id="gender">
                                         <option value="" disabled selected>Choose your Gender</option>
                                         <option value="male">Male</option>
                                         <option value="female">Female</option>
@@ -85,7 +126,7 @@ class Create extends Component {
                                     <label for="gender">Gender</label>
                                 </div>
                                 <div className="input-field col m6 s12 ">
-                                    <select className="validate white-text" id="alignment">
+                                    <select onChange={this.onChange} value={this.state.alignment} className="validate white-text" id="alignment">
                                         <option value="" disabled selected>Choose your Alignment</option>
                                         <optgroup label="Good">
                                             <option value="lawfulGood">Lawful Good</option>
@@ -106,7 +147,7 @@ class Create extends Component {
                                     <label for="alignment">Alignment</label>
                                 </div>
                                 <div className="input-field col m6 s12">
-                                    <select className="validate white-text" id="deity">
+                                    <select onChange={this.onChange} value={this.state.deity} className="validate white-text" id="deity">
                                         <option value="" disabled selected>Choose your Deity</option>
                                         <option value="N/A">N/A</option>
                                         <optgroup label="Core Deities">
@@ -176,7 +217,7 @@ class Create extends Component {
                                     <label for="deity">Deity</label>
                                 </div>
                                 <div className="input-field col s12">
-                                    <textarea id="description" className="materialize-textarea"></textarea>
+                                    <textarea onChange={this.onChange} value={this.state.description} id="description" className="materialize-textarea"></textarea>
                                     <label for="description" className="white-text">Brief Description of Character</label>
                                 </div>
                             </div>
