@@ -8,10 +8,10 @@ const CharacterSchema = new Schema({
             type: String,
             required: true,
         },
-        // playerID: {
-        //     type: Schema.Types.ObjectID,
-        //     ref: "User",
-        // },
+        playerID: {
+            type: Schema.Types.ObjectID,
+            ref: "User",
+        },
         class: {
             name: {
                 type: String,
