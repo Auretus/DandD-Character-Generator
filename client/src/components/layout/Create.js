@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { logoutUser } from '../../actions/authActions';
 import M from "materialize-css";
-//import User from "../../../../models/";
+import apiHelper from "../../utils/apiHelper"
 
 class Create extends Component {
     constructor() {
@@ -34,11 +34,12 @@ class Create extends Component {
             gender: this.state.gender,
             alignment: this.state.alignment,
             deity: this.state.deity,
-            //description: this.state.description
         };
 
-        // console.log(newUser);
-        //this.props.createCharacter(newCharacter, User.props._id);
+        console.log(this.props.auth.user.id);
+
+        apiHelper.createCharacter(newCharacter, this.props.auth.user.id)
+            .then(res => console.log(res));
         
     }
 
@@ -71,11 +72,11 @@ class Create extends Component {
                         <form className="col s12" onSubmit={this.onSubmit}>
                             <div className="row">
                                 <div className="input-field col s12">
-                                    <input /*onChange={this.onChange}*/ value={this.state.character_name} id="character_name" type="text" className=" white-text" />
+                                    <input onChange={this.onChange} value={this.state.character_name} name="character_name" id="character_name" type="text" className=" white-text" />
                                     <label for="character_name" className="white-text">Character Name</label>
                                 </div>
                                 <div className="input-field col m6 s12">
-                                    <select onChange={this.onChange} value={this.state.race} className="validate white-text N/A transparent" id="race">
+                                    <select onChange={this.onChange} value={this.state.race} className="validate white-text N/A transparent" name="race" id="race">
                                         <option value="" disabled selected>Choose your Race</option>
                                         <option value="android">Android</option>
                                         <option value="human">Human</option>
@@ -88,7 +89,7 @@ class Create extends Component {
                                     <label for="race">Race</label>
                                 </div>
                                 <div className="input-field col m6 s12">
-                                    <select onChange={this.onChange} value={this.state.class} className="validate white-text N/A transparent" id="class">
+                                    <select onChange={this.onChange} value={this.state.class} className="validate white-text N/A transparent" name="class" id="class">
                                         <option value="" disabled selected>Choose your Class</option>
                                         <option value="envoy">Envoy</option>
                                         <option value="mechanic">Mechanic</option>
@@ -101,7 +102,7 @@ class Create extends Component {
                                     <label for="Class">Class</label>
                                 </div>
                                 <div className="input-field col m6 s12">
-                                    <select onChange={this.onChange} value={this.state.theme} className="validate white-text" id="theme">
+                                    <select onChange={this.onChange} value={this.state.theme} className="validate white-text" name="theme" id="theme">
                                         <option value="" disabled selected>Choose your Theme</option>
                                         <option value="ace_pilot">Ace Pilot</option>
                                         <option value="bounty_hunter">Bounty Hunter</option>
@@ -117,7 +118,7 @@ class Create extends Component {
                                     <label for="theme">Theme</label>
                                 </div>
                                 <div className="input-field col m6 s12">
-                                    <select onChange={this.onChange} value={this.state.gender} className="validate white-text" id="gender">
+                                    <select onChange={this.onChange} value={this.state.gender} className="validate white-text" name="gender" id="gender">
                                         <option value="" disabled selected>Choose your Gender</option>
                                         <option value="male">Male</option>
                                         <option value="female">Female</option>
@@ -126,7 +127,7 @@ class Create extends Component {
                                     <label for="gender">Gender</label>
                                 </div>
                                 <div className="input-field col m6 s12 ">
-                                    <select onChange={this.onChange} value={this.state.alignment} className="validate white-text" id="alignment">
+                                    <select onChange={this.onChange} value={this.state.alignment} className="validate white-text" name="alignment" id="alignment">
                                         <option value="" disabled selected>Choose your Alignment</option>
                                         <optgroup label="Good">
                                             <option value="lawfulGood">Lawful Good</option>
@@ -147,7 +148,7 @@ class Create extends Component {
                                     <label for="alignment">Alignment</label>
                                 </div>
                                 <div className="input-field col m6 s12">
-                                    <select onChange={this.onChange} value={this.state.deity} className="validate white-text" id="deity">
+                                    <select onChange={this.onChange} value={this.state.deity} className="validate white-text" name="deity" id="deity">
                                         <option value="" disabled selected>Choose your Deity</option>
                                         <option value="N/A">N/A</option>
                                         <optgroup label="Core Deities">

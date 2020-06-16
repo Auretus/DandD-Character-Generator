@@ -45,7 +45,7 @@ app.post("/api/create", (req, res) => {
 });//END POST
 
 //PUT route for updating a character
-app.put("api/update/:id", (req, res) => {
+app.put("/api/update/:id", (req, res) => {
     db.update(req.body, 
         {where: {
             _id: req.params.id
@@ -56,7 +56,7 @@ app.put("api/update/:id", (req, res) => {
 });
 
 //DELETE route for deleting a character
-app.delete("api/delete/:id", (req, res) => {
+app.delete("/api/delete/:id", (req, res) => {
     db.destroy({
         where: {
             _id: req.params.id
