@@ -2,8 +2,8 @@ import axios from "axios";
 
 export default {
     //get all characters
-    getCharacters: function(){
-        return axios.get("/api/characters")
+    postCharacters: function(id){
+        return axios.post("/api/characters", id)
     },
     getCharacterById: function(id){
         return axios.get("/api/character/" + id);

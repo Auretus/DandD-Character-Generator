@@ -28,14 +28,14 @@ router.get("/:id", (req, res) => {
 
 //POST route for saving a new character
 router.post("/create", (req, res) => {
-    console.log(`this is ${JSON.stringify(req.body)}`);
+    //console.log(`this is ${JSON.stringify(req.body)}`);
     
     const identityStats = req.body;
     console.log(JSON.stringify(identityStats));
     db.create({
         identityStats: {
             character_name: identityStats.character_name,
-            //playerID: identityStats.playerID, 
+            playerID: identityStats.playerID, 
             class: identityStats.class, 
             race: identityStats.race,
             theme: identityStats.theme,

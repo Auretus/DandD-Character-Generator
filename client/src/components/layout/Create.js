@@ -34,6 +34,7 @@ class Create extends Component {
             gender: this.state.gender,
             alignment: this.state.alignment,
             deity: this.state.deity,
+            playerID: this.props.auth.user.id
         };
 
         console.log(this.props.auth.user.id);

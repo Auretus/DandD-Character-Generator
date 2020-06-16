@@ -2,20 +2,71 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { logoutUser } from '../../actions/authActions';
+import M from "materialize-css";
+import apiHelper from "../../utils/apiHelper"
 
 class CharacterSheet extends Component {
-    onLogoutClick = e => {
-        e.preventDefault();
-        this.props.logoutUser();
+    state = {
+        characterResults: []
     }
 
+    onLogoutClick = e => {
+        e.preventDefault();
+        this.props.logoutUser();  
+    }
+
+    onChange = e => {
+        this.setState({ [e.target.name]: e.target.value });
+    }
+
+    onSubmit = e => {
+        e.preventDefault();
+
+        const newCharacter = {
+            // character_name: this.state.character_name,
+            // race: this.state.race,
+            // class: this.state.class,
+            // theme: this.state.theme,
+            // gender: this.state.gender,
+            // alignment: this.state.alignment,
+            // deity: this.state.deity,
+            // playerID: this.props.auth.user.id
+        };
+
+        console.log(this.props.auth.user.id);
+
+    //    let db = apiHelper.postCharacters(newCharacter, this.props.auth.user.id)
+    //         .then(req => console.log(req));
+        
+    }
+    
+    componentDidMount(){
+        let characterArray = db.find({ playerID: this.props.auth.user.id });
+        console.log(characterArray);
+        this.setState({
+            characterResults: characterArray
+        })
+    }
+    
+
+
+
     render() {
-
-        // const { user } = this.props.auth;
-
         return (
+
+
             <div className="container">
                 <div className="row cyan-text text-lighten-4">
+                    <div>
+                        <select onChange={this.onChange} value={this.state.character_name}>
+                            <option value="" disabled>Choose your Character</option>
+                            {this.state.characterResults.map(option => {
+                                return (
+                                    <option value={option.character_name}>{option.character_name}</option> 
+                                )
+                            })}
+                        </select>
+                    </div>
                     <div className="row">
                         <h2 className="white-text N/A transparent brown-text text-lighten-5 center-align">Character Name</h2>
                         <p className="white-text center">Health Points: 16</p>
