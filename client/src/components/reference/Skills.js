@@ -18,9 +18,9 @@ class Skills extends Component {
         return (
             <div className="container">
                 <div className="row">
-                    <div className="row">
-                        <h2 className="white-text center-align">Skills</h2>
-                        <p className="white-text center-align">
+                    <div className="row cyan-text text-lighten-4">
+                        <h2 className="center-align">Skills</h2>
+                        <h5 className="center-align">
                             Whether you are a battle-hardened soldier who can freeze a
                             foe’s blood with a glance, a garrulous envoy who can blend into
                             any social situation, or a brilliant technomancer with knowledge
@@ -29,14 +29,15 @@ class Skills extends Component {
                             of skill ranks determined by your class, representing your initial
                             training, and you gain more skill ranks as you gain levels, allowing
                             you to improve in skills you already have or gain new ones.
-                        </p>
+                        </h5>
                         <br/>
                         <img src="images/skill-chart.PNG" alt="skill chart" className="center-align col s12 responsive-img"/>
                     </div>
+                    <br/>
                     <div className="row">
                         <ul className="collapsible popout">
                             <li>
-                                <div className="collapsible-header center blue darken-3 brown-text text-lighten-5">
+                                <div className="collapsible-header header center blue darken-3 brown-text text-lighten-5">
                                     Acrobatics
                                 </div>
                                 <div className="collapsible-body N/A transparent cyan-text text-lighten-4">
@@ -68,8 +69,9 @@ class Skills extends Component {
                                     </div>
                                 </div>
                             </li>
+                            <br/>
                             <li>
-                                <div className="collapsible-header center blue darken-3 brown-text text-lighten-5">
+                                <div className="collapsible-header header center blue darken-3 brown-text text-lighten-5">
                                     Athletics
                                 </div>
                                 <div className="collapsible-body N/A transparent cyan-text text-lighten-4">
@@ -95,8 +97,9 @@ class Skills extends Component {
                                     </div>
                                 </div>
                             </li>
+                            <br/>
                             <li>
-                                <div className="collapsible-header center blue darken-3 brown-text text-lighten-5">
+                                <div className="collapsible-header header center blue darken-3 brown-text text-lighten-5">
                                     Bluff
                                 </div>
                                 <div className="collapsible-body N/A transparent cyan-text text-lighten-4">
@@ -127,8 +130,9 @@ class Skills extends Component {
                                     </div>
                                 </div>
                             </li>
+                            <br/>
                             <li>
-                                <div className="collapsible-header center blue darken-3 brown-text text-lighten-5">
+                                <div className="collapsible-header header center blue darken-3 brown-text text-lighten-5">
                                     Computers
                                 </div>
                                 <div className="collapsible-body N/A transparent cyan-text text-lighten-4">
@@ -179,8 +183,9 @@ class Skills extends Component {
                                     </div>
                                 </div>
                             </li>
+                            <br/>
                             <li>
-                                <div className="collapsible-header center blue darken-3 brown-text text-lighten-5">
+                                <div className="collapsible-header header center blue darken-3 brown-text text-lighten-5">
                                     Culture
                                 </div>
                                 <div className="collapsible-body N/A transparent cyan-text text-lighten-4">
@@ -207,8 +212,9 @@ class Skills extends Component {
                                     </div>
                                 </div>
                             </li>
+                            <br/>
                             <li>
-                                <div className="collapsible-header center blue darken-3 brown-text text-lighten-5">
+                                <div className="collapsible-header header center blue darken-3 brown-text text-lighten-5">
                                     Diplomacy
                                 </div>
                                 <div className="collapsible-body N/A transparent cyan-text text-lighten-4">
@@ -243,8 +249,9 @@ class Skills extends Component {
                                     </div>
                                 </div>
                             </li>
+                            <br/>
                             <li>
-                                <div className="collapsible-header center blue darken-3 brown-text text-lighten-5">
+                                <div className="collapsible-header header center blue darken-3 brown-text text-lighten-5">
                                     Disguise
                                 </div>
                                 <div className="collapsible-body N/A transparent cyan-text text-lighten-4">
@@ -265,8 +272,9 @@ class Skills extends Component {
                                     </div>
                                 </div>
                             </li>
+                            <br/>
                             <li>
-                                <div className="collapsible-header center blue darken-3 brown-text text-lighten-5">
+                                <div className="collapsible-header header center blue darken-3 brown-text text-lighten-5">
                                     Engineering
                                 </div>
                                 <div className="collapsible-body N/A transparent cyan-text text-lighten-4">
@@ -308,8 +316,9 @@ class Skills extends Component {
                                     </div>
                                 </div>
                             </li>
+                            <br/>
                             <li>
-                                <div className="collapsible-header center blue darken-3 brown-text text-lighten-5">
+                                <div className="collapsible-header header center blue darken-3 brown-text text-lighten-5">
                                     Intimidate
                                 </div>
                                 <div className="collapsible-body N/A transparent cyan-text text-lighten-4">
@@ -333,8 +342,9 @@ class Skills extends Component {
                                     </div>
                                 </div>
                             </li>
+                            <br/>
                             <li>
-                                <div className="collapsible-header center blue darken-3 brown-text text-lighten-5">
+                                <div className="collapsible-header header center blue darken-3 brown-text text-lighten-5">
                                     Life Science
                                 </div>
                                 <div className="collapsible-body N/A transparent cyan-text text-lighten-4">
@@ -364,8 +374,9 @@ class Skills extends Component {
                                     </div>
                                 </div>
                             </li>
+                            <br/>
                             <li>
-                                <div className="collapsible-header center blue darken-3 brown-text text-lighten-5">
+                                <div className="collapsible-header header center blue darken-3 brown-text text-lighten-5">
                                     Medicine
                                 </div>
                                 <div className="collapsible-body N/A transparent cyan-text text-lighten-4">
@@ -403,8 +414,9 @@ class Skills extends Component {
                                     </div>
                                 </div>
                             </li>
+                            <br/>
                             <li>
-                                <div className="collapsible-header center blue darken-3 brown-text text-lighten-5">
+                                <div className="collapsible-header header center blue darken-3 brown-text text-lighten-5">
                                     Mysticism
                                 </div>
                                 <div className="collapsible-body N/A transparent cyan-text text-lighten-4">
@@ -444,8 +456,9 @@ class Skills extends Component {
                                     </div>
                                 </div>
                             </li>
+                            <br/>
                             <li>
-                                <div className="collapsible-header center blue darken-3 brown-text text-lighten-5">
+                                <div className="collapsible-header header center blue darken-3 brown-text text-lighten-5">
                                     Perception
                                 </div>
                                 <div className="collapsible-body N/A transparent cyan-text text-lighten-4">
@@ -473,8 +486,9 @@ class Skills extends Component {
                                     </div>
                                 </div>
                             </li>
+                            <br/>
                             <li>
-                                <div className="collapsible-header center blue darken-3 brown-text text-lighten-5">
+                                <div className="collapsible-header header center blue darken-3 brown-text text-lighten-5">
                                     Physical Science
                                 </div>
                                 <div className="collapsible-body N/A transparent cyan-text text-lighten-4">
@@ -498,8 +512,9 @@ class Skills extends Component {
                                     </div>
                                 </div>
                             </li>
+                            <br/>
                             <li>
-                                <div className="collapsible-header center blue darken-3 brown-text text-lighten-5">
+                                <div className="collapsible-header header center blue darken-3 brown-text text-lighten-5">
                                     Piloting
                                 </div>
                                 <div className="collapsible-body N/A transparent cyan-text text-lighten-4">
@@ -528,8 +543,9 @@ class Skills extends Component {
                                     </div>
                                 </div>
                             </li>
+                            <br/>
                             <li>
-                                <div className="collapsible-header center blue darken-3 brown-text text-lighten-5">
+                                <div className="collapsible-header header center blue darken-3 brown-text text-lighten-5">
                                     Profession
                                 </div>
                                 <div className="collapsible-body N/A transparent cyan-text text-lighten-4">
@@ -555,8 +571,9 @@ class Skills extends Component {
                                     </div>
                                 </div>
                             </li>
+                            <br/>
                             <li>
-                                <div className="collapsible-header center blue darken-3 brown-text text-lighten-5">
+                                <div className="collapsible-header header center blue darken-3 brown-text text-lighten-5">
                                     Sense Motive
                                 </div>
                                 <div className="collapsible-body N/A transparent cyan-text text-lighten-4">
@@ -583,8 +600,9 @@ class Skills extends Component {
                                     </div>
                                 </div>
                             </li>
+                            <br/>
                             <li>
-                                <div className="collapsible-header center blue darken-3 brown-text text-lighten-5">
+                                <div className="collapsible-header header center blue darken-3 brown-text text-lighten-5">
                                     Sleight of Hand
                                 </div>
                                 <div className="collapsible-body N/A transparent cyan-text text-lighten-4">
@@ -614,8 +632,9 @@ class Skills extends Component {
                                     </div>
                                 </div>
                             </li>
+                            <br/>
                             <li>
-                                <div className="collapsible-header center blue darken-3 brown-text text-lighten-5">
+                                <div className="collapsible-header header center blue darken-3 brown-text text-lighten-5">
                                     Stealth
                                 </div>
                                 <div className="collapsible-body N/A transparent cyan-text text-lighten-4">
@@ -640,8 +659,9 @@ class Skills extends Component {
                                     </div>
                                 </div>
                             </li>
+                            <br/>
                             <li>
-                                <div className="collapsible-header center blue darken-3 brown-text text-lighten-5">
+                                <div className="collapsible-header header center blue darken-3 brown-text text-lighten-5">
                                     Survival
                                 </div>
                                 <div className="collapsible-body N/A transparent cyan-text text-lighten-4">
@@ -699,7 +719,7 @@ class Skills extends Component {
                                 </div>
                             </li>
                         </ul>
-                    <div className="buttonDiv center">
+                    {/* <div className="buttonDiv center">
                         <button className="btn btn-large waves-effect waves-light hoverable blue white-text" style={{
                             width: "150px",
                             borderRadius: "3px",
@@ -708,7 +728,7 @@ class Skills extends Component {
                         }} onClick={this.onLogoutClick}>
                             Logout
                         </button>
-                    </div>
+                    </div> */}
                     <br /> 
                 </div>
             </div>   
