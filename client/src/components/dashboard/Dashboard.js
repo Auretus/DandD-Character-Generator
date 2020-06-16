@@ -16,11 +16,11 @@ class Dashboard extends Component {
         return (
             <div className="container" style={{ height: "40vh" }}>
                 <div className="row">
-                    <div className="col s12 center-align white-text">
-                        <h4>
+                    <div className="col s12 center-align  cyan-text text-lighten-4">
+                        <h4 className="header">
                             <b>Welcome Starfinder {user.name.split(" ")[0]}!</b>
                         </h4>
-                        <p>
+                        <h5>
                             Delving into alien ruins in search of lost magic. Matching wits
                             with corporate technomancers and their robot army in the
                             gritty streets of a space station. Strafing a dragon-crewed
@@ -31,7 +31,8 @@ class Dashboard extends Component {
                             magic, or simply your powers of persuasion, the Starfinder
                             Roleplaying Game is a game of heroes who change the face
                             of the galaxy, one adventure at a time.
-                        </p>
+                        </h5>
+                        <br/>
                         <div className="buttonDiv center">
                             <button className="btn btn-large waves-effect waves-light hoverable blue white-text" style={{
                                 width: "150px",

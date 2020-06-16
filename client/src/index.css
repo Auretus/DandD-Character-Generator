@@ -24,11 +24,19 @@ html {
   border-style: groove;
   border-color: darkblue;
 }
-.collapsible-header {
-  border-radius: 5%;
+.header {
+  border-radius: 20px;
   border-style: groove;
+  padding: 10px;
   border-color: rgb(22, 183, 236);
   background-image: linear-gradient(to right,rgba(16, 66, 206, 0.698),rgb(67, 9, 161), rgba(0,0,255,.698))
+}
+.sub-header {
+  border-radius: 20px;
+  border-style: groove;
+  border-color: rgb(149, 30, 0);
+  background-color: orangered;
+  padding: 10px;
 }
 footer {
   position: relative;

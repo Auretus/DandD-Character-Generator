@@ -18,9 +18,9 @@ class Themes extends Component {
         return (
             <div className="container">
                 <div className="row">
-                    <div className="row">
-                        <h2 className="white-text center-align">Character Themes</h2>
-                        <p className="white-text center-align">
+                    <div className="row cyan-text text-lighten-4">
+                        <h2 className="center-align">Themes</h2>
+                        <h5 className="center-align">
                             A character theme represents a focus for your character, which may
                             be a result of your background, upbringing, training, or mystic destiny.
                             You select a character theme at 1st level, gaining special benefits that
@@ -28,13 +28,13 @@ class Themes extends Component {
                             abilities are extraordinary abilities unless otherwise noted. With your GM’s
                             permission, you can even create your own theme that fits your character
                             concept perfectly!
-                        </p>
-                        <br/>
+                        </h5>
                     </div>
+                    <br/>
                     <div className="row">
                         <ul className="collapsible popout">
                             <li>
-                                <div className="collapsible-header center blue darken-3 brown-text text-lighten-5">
+                                <div className="collapsible-header header center blue darken-3 brown-text text-lighten-5">
                                     Ace Pilot
                                 </div>
                                 <div className="collapsible-body N/A transparent cyan-text text-lighten-4">
@@ -68,8 +68,9 @@ class Themes extends Component {
                                     </div>
                                 </div>
                             </li>
+                            <br/>
                             <li>
-                                <div className="collapsible-header center blue darken-3 brown-text text-lighten-5">
+                                <div className="collapsible-header header center blue darken-3 brown-text text-lighten-5">
                                     Bounty Hunter
                                 </div>
                                 <div className="collapsible-body N/A transparent cyan-text text-lighten-4">
@@ -103,8 +104,9 @@ class Themes extends Component {
                                     </div>
                                 </div>
                             </li>
+                            <br/>
                             <li>
-                                <div className="collapsible-header center blue darken-3 brown-text text-lighten-5">
+                                <div className="collapsible-header header center blue darken-3 brown-text text-lighten-5">
                                     Icon
                                 </div>
                                 <div className="collapsible-body N/A transparent cyan-text text-lighten-4">
@@ -138,8 +140,9 @@ class Themes extends Component {
                                     </div>
                                 </div>
                             </li>
+                            <br/>
                             <li>
-                                <div className="collapsible-header center blue darken-3 brown-text text-lighten-5">
+                                <div className="collapsible-header header center blue darken-3 brown-text text-lighten-5">
                                     Mercenary
                                 </div>
                                 <div className="collapsible-body N/A transparent cyan-text text-lighten-4">
@@ -173,8 +176,9 @@ class Themes extends Component {
                                     </div>
                                 </div>
                             </li>
+                            <br/>
                             <li>
-                                <div className="collapsible-header center blue darken-3 brown-text text-lighten-5">
+                                <div className="collapsible-header header center blue darken-3 brown-text text-lighten-5">
                                     Outlaw
                                 </div>
                                 <div className="collapsible-body N/A transparent cyan-text text-lighten-4">
@@ -208,8 +212,9 @@ class Themes extends Component {
                                     </div>
                                 </div>
                             </li>
+                            <br/>
                             <li>
-                                <div className="collapsible-header center blue darken-3 brown-text text-lighten-5">
+                                <div className="collapsible-header header center blue darken-3 brown-text text-lighten-5">
                                     Priest
                                 </div>
                                 <div className="collapsible-body N/A transparent cyan-text text-lighten-4">
@@ -243,8 +248,9 @@ class Themes extends Component {
                                     </div>
                                 </div>
                             </li>
+                            <br/>
                             <li>
-                                <div className="collapsible-header center blue darken-3 brown-text text-lighten-5">
+                                <div className="collapsible-header header center blue darken-3 brown-text text-lighten-5">
                                     Scholar
                                 </div>
                                 <div className="collapsible-body N/A transparent cyan-text text-lighten-4">
@@ -278,8 +284,9 @@ class Themes extends Component {
                                     </div>
                                 </div>
                             </li>
+                            <br/>
                             <li>
-                                <div className="collapsible-header center blue darken-3 brown-text text-lighten-5">
+                                <div className="collapsible-header header center blue darken-3 brown-text text-lighten-5">
                                     Spacefarer
                                 </div>
                                 <div className="collapsible-body N/A transparent cyan-text text-lighten-4">
@@ -313,8 +320,9 @@ class Themes extends Component {
                                     </div>
                                 </div>
                             </li>
+                            <br/>
                             <li>
-                                <div className="collapsible-header center blue darken-3 brown-text text-lighten-5">
+                                <div className="collapsible-header header center blue darken-3 brown-text text-lighten-5">
                                     Xenoseeker
                                 </div>
                                 <div className="collapsible-body N/A transparent cyan-text text-lighten-4">
@@ -348,8 +356,9 @@ class Themes extends Component {
                                     </div>
                                 </div>
                             </li>
+                            <br/>
                             <li>
-                                <div className="collapsible-header center blue darken-3 brown-text text-lighten-5">
+                                <div className="collapsible-header header center blue darken-3 brown-text text-lighten-5">
                                     Themeless
                                 </div>
                                 <div className="collapsible-body N/A transparent cyan-text text-lighten-4">
@@ -382,8 +391,9 @@ class Themes extends Component {
                                     </div>
                                 </div>
                             </li>
+                            <br/>
                         </ul>
-                    <div className="buttonDiv center">
+                    {/* <div className="buttonDiv center">
                         <button className="btn btn-large waves-effect waves-light hoverable blue white-text" style={{
                             width: "150px",
                             borderRadius: "3px",
@@ -392,7 +402,7 @@ class Themes extends Component {
                         }} onClick={this.onLogoutClick}>
                             Logout
                         </button>
-                    </div>
+                    </div> */}
                     <br /> 
                 </div>
             </div>   

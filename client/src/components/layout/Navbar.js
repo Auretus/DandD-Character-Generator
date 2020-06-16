@@ -69,7 +69,7 @@ class Navbar extends Component {
                     </li>
                     <li className="divider" tabIndex="-1"></li>
                     <li>
-                        <Link to="/howto" className="white-text">How To Play</Link>
+                        <Link to="/howtoplay" className="white-text">How To Play</Link>
                     </li>
                     <li className="divider" tabIndex="-1"></li>
                     <li>

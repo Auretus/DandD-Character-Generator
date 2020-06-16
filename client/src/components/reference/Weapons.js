@@ -2,12 +2,26 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { logoutUser } from '../../actions/authActions';
-import weapons from './weapons.json'
+import API from "../../utils/API";
 
 class Weapons extends Component {
+    state = {
+        weaponResults: []
+    };
+
     onLogoutClick = e => {
         e.preventDefault();
         this.props.logoutUser();
+    }
+
+    componentDidMount(){
+        API.getWeapons().then(data => {
+            let weapons = data.data.results;
+            console.log(weapons);
+            this.setState({
+                weaponResults: weapons
+            })
+        })
     }
 
     render() {
@@ -15,9 +29,9 @@ class Weapons extends Component {
         return (
             <div className="container">
                 <div className="row">
-                    <div className="row">
-                        <h2 className="white-text center-align">Weapons</h2>
-                        <h5 className="white-text center-align">
+                    <div className="row cyan-text text-lighten-4">
+                        <h2 className="center-align">Weapons</h2>
+                        <h5 className="center-align">
                             An adventurer’s weapon can be all that stands between
                             them and death. Weapons primarily deal damage, and
                             some have additional special properties. Some weapons also
@@ -26,20 +40,20 @@ class Weapons extends Component {
                         <br/>
                     </div>
                     <div className="row">
-                       {weapons.results.map(weapon => {
+                       {this.state.weaponResults.map(weapon => {
                            return (
-                            <div className="col s12 m4">
+                            <div className="col s12 m6"  key={weapon.title}>
                                 <div className="card small N/A transparent">
                                     <div className="card-content">
-                                        <span className="card-title activator white-text text-darken-4">
+                                        <span className="card-title activator cyan-text text-lighten-4 header">
                                             {weapon.title} | Lvl {weapon.item_level}
-                                            <i className="material-icons right white-text">expand_more</i>
+                                            <i className="material-icons small right cyan-text text-lighten-4">expand_more</i>
                                         </span>
                                     </div>
-                                    <div className="card-reveal">
-                                        <span className="card-title black-text">
-                                            {weapon.title}
-                                            <i className="material-icons right black-text">close</i>
+                                    <div className="card-reveal black cyan-text text-lighten-4 center-align">
+                                        <span className="card-title black-text sub-header">
+                                            <b>{weapon.title}</b>
+                                            <i className="material-icons right small cyan-text text-lighten-4">close</i>
                                         </span>
                                         <p>
                                             Level: {weapon.item_level}
@@ -59,7 +73,7 @@ class Weapons extends Component {
                            )
                        })} 
                     </div>
-                    <div className="buttonDiv center">
+                    {/* <div className="buttonDiv center">
                         <button className="btn btn-large waves-effect waves-light hoverable blue white-text" style={{
                             width: "150px",
                             borderRadius: "3px",
@@ -68,7 +82,7 @@ class Weapons extends Component {
                         }} onClick={this.onLogoutClick}>
                             Logout
                         </button>
-                    </div>
+                    </div> */}
                     <br /> 
                 </div>
             </div>   
