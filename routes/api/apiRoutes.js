@@ -1,11 +1,12 @@
 //apiRoutes.js is for routes displaying data from db and saving data to db
-const express = require("express").Router();
+const express = require("express")
+const router = express.Router();
 const mongoose = require("mongoose");
 var db = require("../../models/Character");
-const app = express();
+//const app = express();
 
 //GET route for getting all characters
-app.get("/api/characters", (req, res) => {
+router.get("/", (req, res) => {
     console.log(res);
     db.findAll({})
         .then(allCharacters =>{
@@ -14,7 +15,7 @@ app.get("/api/characters", (req, res) => {
 });
 
 //GET route for getting a single character by id
-app.get("/api/character/:id", (req, res) => {
+router.get("/:id", (req, res) => {
     console.log(res);
     db.findOne({
         where: {
@@ -26,26 +27,27 @@ app.get("/api/character/:id", (req, res) => {
 });
 
 //POST route for saving a new character
-app.post("/api/create", (req, res) => {
-    console.log(req.body);
-    res.json(req.body);
-    const identityStats = req.body.identityStats;
+router.post("/create", (req, res) => {
+    console.log(`this is ${JSON.stringify(req.body)}`);
     
+    const identityStats = req.body;
+    console.log(JSON.stringify(identityStats));
     db.create({
-        //identityStats
-        characterName: identityStats.characterName,
-        playerID: identityStats.playerID, 
-        class: identityStats.class, 
-        race: identityStats.race,
-        theme: identityStats.theme,
-        gender: identityStats.gender,
-        alignment: identityStats.alignment,
-        deity: identityStats.deity,
-    });
+        identityStats: {
+            character_name: identityStats.character_name,
+            //playerID: identityStats.playerID, 
+            class: identityStats.class, 
+            race: identityStats.race,
+            theme: identityStats.theme,
+            gender: identityStats.gender,
+            alignment: identityStats.alignment,
+            deity: identityStats.deity,
+        }
+    }).then(results => res.json(results));
 });//END POST
 
 //PUT route for updating a character
-app.put("/api/update/:id", (req, res) => {
+router.put("/api/update/:id", (req, res) => {
     db.update(req.body, 
         {where: {
             _id: req.params.id
@@ -56,7 +58,7 @@ app.put("/api/update/:id", (req, res) => {
 });
 
 //DELETE route for deleting a character
-app.delete("/api/delete/:id", (req, res) => {
+router.delete("/delete/:id", (req, res) => {
     db.destroy({
         where: {
             _id: req.params.id
@@ -65,6 +67,9 @@ app.delete("/api/delete/:id", (req, res) => {
         res.json(deletedCharacter);
     });
 });
+
+module.exports = router;
+
 
 
 // //WEAPONS

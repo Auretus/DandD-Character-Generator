@@ -8,13 +8,13 @@ export default {
     getCharacterById: function(id){
         return axios.get("/api/character/" + id);
     },
-    createCharacter: function(characterData){
-        return axios.post("/api/create", characterData);
+    createCharacter: function(characterData, id){
+        return axios.post("/api/character/create", characterData, id);
     },
     updateCharacter: function(characterData, id){
-        return axios.put("/api/update/" + id, characterData,)
+        return axios.put("/api/character/update/" + id, characterData,)
     },
     deleteCharacter: function(id){
-        return axios.delete("/api/delete/" + id)
+        return axios.delete("/api/character/delete/" + id)
     }
 }
