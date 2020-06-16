@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { logoutUser } from '../../actions/authActions';
 import M from "materialize-css";
-import { User } from "../../../../models/User";
+//import User from "../../../../models/";
 
 class Create extends Component {
     constructor() {
@@ -16,7 +16,6 @@ class Create extends Component {
             gender: "",
             alignment: "",
             deity: "",
-            description: ""
         };
     }
 
@@ -35,11 +34,12 @@ class Create extends Component {
             gender: this.state.gender,
             alignment: this.state.alignment,
             deity: this.state.deity,
-            description: this.state.description
+            //description: this.state.description
         };
 
         // console.log(newUser);
-        this.props.createCharacter(newCharacter, User.props._id);
+        //this.props.createCharacter(newCharacter, User.props._id);
+        
     }
 
     onLogoutClick = e => {
@@ -71,7 +71,7 @@ class Create extends Component {
                         <form className="col s12" onSubmit={this.onSubmit}>
                             <div className="row">
                                 <div className="input-field col s12">
-                                    <input onChange={this.onChange} value={this.state.character_name} id="character_name" type="text" className="validate white-text" />
+                                    <input /*onChange={this.onChange}*/ value={this.state.character_name} id="character_name" type="text" className=" white-text" />
                                     <label for="character_name" className="white-text">Character Name</label>
                                 </div>
                                 <div className="input-field col m6 s12">
@@ -215,10 +215,6 @@ class Create extends Component {
                                         </optgroup>
                                     </select>
                                     <label for="deity">Deity</label>
-                                </div>
-                                <div className="input-field col s12">
-                                    <textarea onChange={this.onChange} value={this.state.description} id="description" className="materialize-textarea"></textarea>
-                                    <label for="description" className="white-text">Brief Description of Character</label>
                                 </div>
                             </div>
                             <div className="button">

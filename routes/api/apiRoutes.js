@@ -35,14 +35,10 @@ app.post("/api/create", (req, res) => {
         //identityStats
         characterName: identityStats.characterName,
         playerID: identityStats.playerID, 
-        effectiveCharacterLevel: identityStats.effectiveCharacterLevel,
         class: identityStats.class, 
         race: identityStats.race,
-        size: identityStats.size,
         theme: identityStats.theme,
-        speed: identityStats.speed,
         gender: identityStats.gender,
-        homeWorld: identityStats.homeWorld,
         alignment: identityStats.alignment,
         deity: identityStats.deity,
     });
