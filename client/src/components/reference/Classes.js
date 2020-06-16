@@ -19,9 +19,9 @@ class Classes extends Component {
 
         return (
             <div className="container">
-                <div className="row">
-                    <h2 className="white-text center-align">Classes</h2>
-                    <p className="white-text center-align">
+                <div className="row cyan-text text-lighten-4">
+                    <h2 className="center-align">Classes</h2>
+                    <h5 className="center-align">
                         Your character’s class represents her field of expertise, whether
                         she’s a battle-hardened soldier or a technomancer bending the
                         laws of physics. Her class grants a number of abilities—these
@@ -29,12 +29,13 @@ class Classes extends Component {
                         It also determines statistics such as her Hit Points, Stamina Points, weapon and armor proficiencies,
                         class skills and skill ranks per level, and base attack and saving
                         throw bonuses. The following are Starfinder’s core classes.
-                    </p>
+                    </h5>
                 </div>
+                <br/>
                 <div className="row">
                     <ul className="collapsible popout">
                         <li>
-                            <div className="collapsible-header center blue darken-3 brown-text text-lighten-5">Envoy</div>
+                            <div className="collapsible-header header center blue darken-3 brown-text text-lighten-5">Envoy</div>
                             <div className="collapsible-body N/A transparent cyan-text text-lighten-4">
                                 <div className="row">
                                     <div className="col s12">
@@ -119,8 +120,9 @@ class Classes extends Component {
                                 </div>
                             </div>
                         </li>
+                        <br/>
                         <li>
-                            <div className="collapsible-header center blue darken-3 brown-text text-lighten-5">Mechanic</div>
+                            <div className="collapsible-header header center blue darken-3 brown-text text-lighten-5">Mechanic</div>
                             <div className="collapsible-body N/A transparent cyan-text text-lighten-4">
                                 <div className="row">
                                     <div className="col s12">
@@ -199,8 +201,9 @@ class Classes extends Component {
                                 </div>
                             </div>
                         </li>
+                        <br/>
                         <li>
-                            <div className="collapsible-header center blue darken-3 brown-text text-lighten-5">Mystic</div>
+                            <div className="collapsible-header header center blue darken-3 brown-text text-lighten-5">Mystic</div>
                             <div className="collapsible-body N/A transparent cyan-text text-lighten-4">
                                 <div className="row">
                                     <div className="col s12">
@@ -284,8 +287,9 @@ class Classes extends Component {
                                 </div>
                             </div>
                         </li>
+                        <br/>
                         <li>
-                            <div className="collapsible-header center blue darken-3 brown-text text-lighten-5">Operative</div>
+                            <div className="collapsible-header header center blue darken-3 brown-text text-lighten-5">Operative</div>
                             <div className="collapsible-body N/A transparent cyan-text text-lighten-4">
                             <div className="row">
                                     <div className="col s12">
@@ -370,8 +374,9 @@ class Classes extends Component {
                                 </div>
                             </div>
                         </li>
+                        <br/>
                         <li>
-                            <div className="collapsible-header center blue darken-3 brown-text text-lighten-5">Solarian</div>
+                            <div className="collapsible-header header center blue darken-3 brown-text text-lighten-5">Solarian</div>
                             <div className="collapsible-body N/A transparent cyan-text text-lighten-4">
                             <div className="row">
                                     <div className="col s12">
@@ -454,8 +459,9 @@ class Classes extends Component {
                                 </div>
                             </div>
                         </li>
+                        <br/>
                         <li>
-                            <div className="collapsible-header center blue darken-3 brown-text text-lighten-5">Soldier</div>
+                            <div className="collapsible-header header center blue darken-3 brown-text text-lighten-5">Soldier</div>
                             <div className="collapsible-body N/A transparent cyan-text text-lighten-4">
                             <div className="row">
                                     <div className="col s12">
@@ -538,8 +544,9 @@ class Classes extends Component {
                                 </div>
                             </div>
                         </li>
+                        <br/>
                         <li>
-                            <div className="collapsible-header center blue darken-3 brown-text text-lighten-5">Technomancer</div>
+                            <div className="collapsible-header header center blue darken-3 brown-text text-lighten-5">Technomancer</div>
                             <div className="collapsible-body N/A transparent cyan-text text-lighten-4">
                             <div className="row">
                                     <div className="col s12">
@@ -620,8 +627,9 @@ class Classes extends Component {
                                 </div>
                             </div>
                         </li>
+                        <br/>
                     </ul>
-                    <div className="buttonDiv center">
+                    {/* <div className="buttonDiv center">
                         <button className="btn btn-large waves-effect waves-light hoverable blue white-text" style={{
                             width: "150px",
                             borderRadius: "3px",
@@ -630,7 +638,7 @@ class Classes extends Component {
                         }} onClick={this.onLogoutClick}>
                             Logout
                         </button>
-                    </div>
+                    </div> */}
                     <br /> 
                 </div>
             </div>   

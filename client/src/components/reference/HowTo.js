@@ -14,12 +14,12 @@ class HowTo extends Component {
         return (
             <div className="container">
                 <div className="row">
-                    <div className="col s12 N/A transparent white-text">
-                        <h4 className="center-align">
+                    <div className="col s12 N/A transparent cyan-text text-lighten-4">
+                        <h2 className="center-align">
                             GETTING STARTED
-                        </h4>
+                        </h2>
                         <hr/>
-                        <p>
+                        <h5>
                             In Starfinder, you and your friends play the crew of a starship exploring the
                             mysteries of a weird universe. Within this framework, however, there are no
                             limits to the characters you can play and stories you can tell. Will you join the
@@ -29,17 +29,11 @@ class HowTo extends Component {
                             assassin with a magic sword trying to atone for a dark past. Whatever your
                             mission, you and your team will need all your magic, weapons, and wits to
                             make it through. But most of all, you’ll need each other.
-                        </p>
-                        <p>
-                            Before you can pick up your arc pistol and blast off
-                            toward adventure, there are some key things you need
-                            to know about running or playing in a Starfinder game. If
-                            you’re already experienced with roleplaying games, feel free
-                            to skip ahead to the next page.
-                        </p>
-                        <h5 className="center-align">
-                            WHAT’S A ROLEPLAYING GAME?
                         </h5>
+                        <br/>
+                        <h4 className="center-align header">
+                            WHAT’S A ROLEPLAYING GAME?
+                        </h4>
                         <p>
                             Starfinder is a tabletop adventure roleplaying game (RPG): an
                             interactive story in which one player—the Game Master—sets
@@ -57,7 +51,7 @@ class HowTo extends Component {
                             just describe what you want your character to do, and let the
                             Game Master and the rules do the rest!
                         </p>
-                        <h5 className="center-align">
+                        <h5 className="center-align sub-header">
                             The Players
                         </h5>
                         <p>
@@ -88,7 +82,7 @@ class HowTo extends Component {
                             on. All the rules players need to play Starfinder can be found
                             in this book.
                         </p>
-                        <h5 className="center-align">
+                        <h5 className="center-align sub-header">
                             The Game Master
                         </h5>
                         <p>
@@ -122,7 +116,7 @@ class HowTo extends Component {
                             override the rules if she disagrees with an interpretation or feels
                             a given rules interaction is breaking the mood.
                         </p>
-                        <h5 className="center-align">
+                        <h5 className="center-align sub-header">
                             Unlimited Adventure
                         </h5>
                         <p>
@@ -138,72 +132,8 @@ class HowTo extends Component {
                             as “one-shots,” while games that last many sessions or contain
                             several linked but distinct adventures are called “campaigns.”
                         </p>
-                        <h5 className="center-align">
-                            WHAT'S IN THIS BOOK?
-                        </h5>
-                        <p>
-                            This book contains all the information you need to play
-                            Starfinder, whether you’re a player or a Game Master. While
-                            some people may want to dive directly into the rules and
-                            character creation beginning with Chapter 2, others may want
-                            to first learn about Starfinder’s setting by perusing Chapter 12.
-                            For players making characters, Chapter 2 provides a stepby-
-                            step walk-through of the process that includes references
-                            to relevant chapters. Chapter 3 follows with information about
-                            the different core races from which you can choose, and Chapter
-                            4 presents classes that determine your character’s skills and
-                            abilities. Chapters 5–7 include information for further customizing
-                            your character’s abilities and equipment, while Chapter 10 covers
-                            magic and spells for characters with a supernatural element. Feel
-                            free to peruse some or all of these sections before embarking on
-                            the character creation process. See the first step in Character
-                            Creation on page 14 for more details.
-                        </p>
-                        <p>
-                            Beyond information about character creation, this book
-                            also contains the rules you’ll need to play the Starfinder RPG.
-                            Tactical combat, movement, and related rules are an important
-                            part of Starfinder, as is starship combat, and these can be found
-                            in Chapters 8 and 9. It’s a good idea for players to review these
-                            chapters when learning how to play Starfinder, and it’s key
-                            for Game Masters to understand them so that gameplay and
-                            adjudication can flow smoothly.
-                        </p>
-                        <p>
-                            Game Masters should also review Chapter 11, which collects
-                            key GM rules such as Starfinder’s common environments,
-                            hazards like traps and poisons, instructions for building
-                            encounters and preparing and running games, and more.
-                            They’ll also want to be deeply familiar with the setting
-                            presented in Chapter 12, and Game Masters familiar with the
-                            Pathfinder RPG and interested in bringing elements of that
-                            game into their Starfinder adventures will want to review
-                            Chapter 13, which explains how to incorporate legacy material
-                            into Starfinder.
-                        </p>
-                        <p>
-                            Besides this book, you need just a few things to play and run
-                            a Starfinder game. Most importantly, you need a prepared Game
-                            Master and players with characters they’ve created ahead of
-                            time. (Blank character sheets can be found in the back of this
-                            book and online at paizo.com.) You also need pencils and a set
-                            of polyhedral dice. Each die is referred to using a “d” followed
-                            by the number of sides it has (so a four-sided die is a d4). You
-                            need at least one d4, d6, d8, d10, d12, and d20, as well as a set
-                            of percentile dice (“d%”) that generates a number from 1 to 100
-                            (this can be simulated with two 10-sided dice). You also need
-                            a tactical battle map with 1-inch squares and a starship battle
-                            map with 1-inch hexagons, as well as tokens or miniatures to
-                            represent your characters and ships.
-                        </p>
-                        <p>
-                            Not sure where to start? Starfinder Flip-Mat: Basic Terrain
-                            and Starfinder Flip-Mat: Basic Starfield give you the maps
-                            you need to play, and you can find miniatures and cardstock
-                            pawns like the Starfinder Core Rulebook Pawn Collection at
-                            paizo.com, along with dice sets and other gaming accessories.
-                        </p>
-                        <h4 className="center-align">
+                        <br/>
+                        <h4 className="center-align header">
                             SOME BASIC CONCEPTS
                         </h4>
                         <hr/>
@@ -213,7 +143,7 @@ class HowTo extends Component {
                             the book, and many are common to tabletop roleplaying in
                             general. For a larger glossary, see page 512.
                         </p>
-                        <h5 className="center-align">
+                        <h5 className="center-align sub-header">
                             1d6, d20, etc.
                         </h5>
                         <p>
@@ -228,7 +158,7 @@ class HowTo extends Component {
                             have a three-sided die, you can roll a d6 instead—treat a roll of 1 or
                             2 as a 1, a roll of 3 or 4 as a 2, and a roll of 5 or 6 as a 3.
                         </p>
-                        <h5 className="center-align">
+                        <h5 className="center-align sub-header">
                             Abbreviations
                         </h5>
                         <p>
@@ -237,7 +167,7 @@ class HowTo extends Component {
                             RP (Resolve Points). If you miss or forget what an abbreviation
                             means, they’re explained in the glossary starting on page 512.
                         </p>
-                        <h5 className="center-align">
+                        <h5 className="center-align sub-header">
                             Armor Class (AC)
                         </h5>
                         <p>
@@ -245,14 +175,14 @@ class HowTo extends Component {
                             strike your character in combat. A character has two Armor
                             Classes: Energy Armor Class (EAC) and Kinetic Armor Class (KAC).
                         </p>
-                        <h5 className="center-align">
+                        <h5 className="center-align sub-header">
                             Attack Roll
                         </h5>
                         <p>
                             An attack roll is a d20 roll that represents your character’s
                             attempt to strike another creature in combat.
                         </p>
-                        <h5 className="center-align">
+                        <h5 className="center-align sub-header">
                             Check
                         </h5>
                         <p>
@@ -262,7 +192,7 @@ class HowTo extends Component {
                             you successfully perform a task), and initiative checks (which
                             determine when you act in combat).
                         </p>
-                        <h5 className="center-align">
+                        <h5 className="center-align sub-header">
                             Combat
                         </h5>
                         <p>
@@ -272,7 +202,7 @@ class HowTo extends Component {
                             instead refer to starship combat, which uses a hex map; you can
                             find the details of that system in Chapter 9.
                         </p>
-                        <h5 className="center-align">
+                        <h5 className="center-align sub-header">
                             Creature
                         </h5>
                         <p>
@@ -280,14 +210,14 @@ class HowTo extends Component {
                             includes player characters (PCs), nonplayer characters (NPCs),
                             and monsters.
                         </p>
-                        <h5 className="center-align">
+                        <h5 className="center-align sub-header">
                             Difficulty Class (DC)
                         </h5>
                         <p>
                             This is the target number a creature must meet or exceed when
                             attempting a check in order to accomplish a given task.
                         </p>
-                        <h5 className="center-align">
+                        <h5 className="center-align sub-header">
                             Encounter
                         </h5>
                         <p>
@@ -298,7 +228,7 @@ class HowTo extends Component {
                             characters’ statistics. Characters typically earn experience
                             points for completing encounters.
                         </p>
-                        <h5 className="center-align">
+                        <h5 className="center-align sub-header">
                             Experience Points (XP)
                         </h5>
                         <p>
@@ -307,7 +237,7 @@ class HowTo extends Component {
                             challenges. When characters earn enough experience points,
                             they advance in level, or “level up” (see Leveling Up on page 26).
                         </p>
-                        <h5 className="center-align">
+                        <h5 className="center-align sub-header">
                             Game Master (GM)
                         </h5>
                         <p>
@@ -317,7 +247,7 @@ class HowTo extends Component {
                             fun game—she wants the other players to ultimately succeed
                             in their goals, but only after much heroic striving and danger.
                         </p>
-                        <h5 className="center-align">
+                        <h5 className="center-align sub-header">
                             Hit Points (HP) and Stamina Points (SP)
                         </h5>
                         <p>
@@ -327,7 +257,7 @@ class HowTo extends Component {
                             are lost before Hit Points and are much easier to regain. For a
                             more detailed explanation, see page 22.
                         </p>
-                        <h5 className="center-align">
+                        <h5 className="center-align sub-header">
                             Level
                         </h5>
                         <p>
@@ -338,14 +268,14 @@ class HowTo extends Component {
                             also refer to a spell’s level, an item’s level, or another scaling
                             mechanic that falls within the framework of the game’s rules.
                         </p>
-                        <h5 className="center-align">
+                        <h5 className="center-align sub-header">
                             Modifier
                         </h5>
                         <p>
                             A modifier is a number that is added to a roll such as an attack
                             roll, saving throw, or skill check. It can be positive or negative.
                         </p>
-                        <h5 className="center-align">
+                        <h5 className="center-align sub-header">
                             Monster
                         </h5>
                         <p>
@@ -354,20 +284,20 @@ class HowTo extends Component {
                             from being them for other reasons. A monster might be a player
                             character’s opponent or ally, or serve any other role.
                         </p>
-                        <h5 className="center-align">
+                        <h5 className="center-align sub-header">
                             Nonplayer Character (NPC)
                         </h5>
                         <p>
                             A nonplayer character is controlled by the GM for the purpose of
                             interacting with players and helping advance the story.
                         </p>
-                        <h5 className="center-align">
+                        <h5 className="center-align sub-header">
                             Player Character (PC)
                         </h5>
                         <p>
                             This is a character controlled by a player.
                         </p>
-                        <h5 className="center-align">
+                        <h5 className="center-align sub-header">
                             Roleplaying
                         </h5>
                         <p>
@@ -376,7 +306,7 @@ class HowTo extends Component {
                             a player speaks or describes action from the perspective of a
                             character, it is referred to as being “in character.”
                         </p>
-                        <h5 className="center-align">
+                        <h5 className="center-align sub-header">
                             Round
                         </h5>
                         <p>
@@ -386,21 +316,22 @@ class HowTo extends Component {
                             three phases of actions and don’t correlate to a specific amount
                             of time.
                         </p>
-                        <h5 className="center-align">
+                        <h5 className="center-align sub-header">
                            Saving Throw 
                         </h5>
                         <p>
                             A saving throw is a d20 roll representing your character’s attempt
                             to avoid or reduce some harmful effect.
                         </p>
-                        <h5 className="center-align">                            
+                        <h5 className="center-align sub-header">                            
                             Tier
                         </h5>
                         <p>
                             Tier indicates scaling and is similar in meaning to “level”; it is used
                             for computers and starships, as well as other elements.
                         </p>
-                        <h4 className="center-align">                            
+                        <br/>
+                        <h4 className="center-align header">                            
                             OVERVIEW OF PLAY
                         </h4>
                         <hr/>
@@ -409,7 +340,7 @@ class HowTo extends Component {
                             you absorb the game’s mechanical details. The following are
                             common aspects of Starfinder play.
                         </p>
-                        <h5 className="center-align">                            
+                        <h5 className="center-align sub-header">                            
                             Roleplaying
                         </h5>
                         <p>
@@ -426,7 +357,7 @@ class HowTo extends Component {
                             that their actions have consequences—don’t insult an excitable
                             crime boss unless you’re ready to defend yourself!
                         </p>
-                        <h5 className="center-align">                            
+                        <h5 className="center-align sub-header">                            
                             Exploring
                         </h5>
                         <p>
@@ -443,7 +374,7 @@ class HowTo extends Component {
                             explain how to adjudicate the PCs’ adventures in strange and
                             hazardous places with regard to their statistics and abilities.
                         </p>
-                        <h5 className="center-align">                            
+                        <h5 className="center-align sub-header">                            
                             Tactical Combat
                         </h5>
                         <p>
@@ -460,7 +391,7 @@ class HowTo extends Component {
                             the same thing to them! Full details about Starfinder’s tactical
                             rules can be found in Chapter 8.
                         </p>
-                        <h5 className="center-align">                            
+                        <h5 className="center-align sub-header">                            
                             Starship Combat
                         </h5>
                         <p>
@@ -470,7 +401,7 @@ class HowTo extends Component {
                             about Starfinder’s starship combat rules can be found in Chapter 9.
                         </p>
                     </div>
-                    <div className="buttonDiv center">
+                    {/* <div className="buttonDiv center">
                         <button className="btn btn-large waves-effect waves-light hoverable blue white-text" style={{
                             width: "150px",
                             borderRadius: "3px",
@@ -479,7 +410,7 @@ class HowTo extends Component {
                         }} onClick={this.onLogoutClick}>
                             Logout
                         </button>
-                    </div>
+                    </div> */}
                     <br /> 
                 </div>
             </div>  
