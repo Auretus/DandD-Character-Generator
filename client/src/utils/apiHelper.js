@@ -2,7 +2,7 @@ import axios from "axios";
 
 export default {
     //get all characters
-    postCharacters: function(id){
+    getCharacters: function(id){
         return axios.post("/api/characters", id)
     },
     getCharacterById: function(id){

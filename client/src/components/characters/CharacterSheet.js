@@ -41,7 +41,7 @@ class CharacterSheet extends Component {
     }
     
     componentDidMount(){
-        let characterArray = db.find({ playerID: this.props.auth.user.id });
+        let characterArray = getCharacters(this.props.auth.user.id);
         console.log(characterArray);
         this.setState({
             characterResults: characterArray
