@@ -3,16 +3,35 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { logoutUser } from '../../actions/authActions';
 import CharacterCard from "../characters/CharacterCard";
+import apiHelper from "../../utils/apiHelper";
 
 class Roster extends Component {
+    state = {
+        charArray: []
+    }
+
     onLogoutClick = e => {
         e.preventDefault();
         this.props.logoutUser();
     }
 
+    componentDidMount() {
+        apiHelper.getCharacters()
+            .then(data => {
+                
+                //console.log(data.data);
+                let characters = data.data;
+                this.setState({
+                    charArray: characters
+                })
+                console.log(characters);
+            })
+            
+    }
+    
     render() {
-        const { user } = this.props.auth; 
-
+        const { user } = this.props.auth;
+        
         return (
             <div className="container">
                 <div className="row">
@@ -24,12 +43,24 @@ class Roster extends Component {
                             Here's your Crew!
                         </h4>
                         <br />
-                        <CharacterCard />
-                        <CharacterCard />
-                        <CharacterCard />
-                        <CharacterCard />
-                        <CharacterCard />
-                        <CharacterCard />
+                        {this.state.charArray.map(character => {
+                            if (character.identityStats.playerID === this.props.auth.user.id) {
+                                return (
+                                    <CharacterCard
+                                        character_name={character.identityStats.character_name}
+                                        race={character.identityStats.race}
+                                        class={character.identityStats.class}
+                                        theme={character.identityStats.theme}
+                                        gender={character.identityStats.gender}
+                                        alignment={character.identityStats.alignment}
+                                        deity={character.identityStats.deity}
+                                    />
+                                )
+                            } else return;
+                        })
+                        }
+
+
                     </div>
                 </div>
                 <div className="buttonDiv center">
