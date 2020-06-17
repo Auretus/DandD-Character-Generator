@@ -16,6 +16,7 @@ class Create extends Component {
             gender: "",
             alignment: "",
             deity: "",
+            level: 1
         };
     }
 
@@ -34,7 +35,8 @@ class Create extends Component {
             gender: this.state.gender,
             alignment: this.state.alignment,
             deity: this.state.deity,
-            playerID: this.props.auth.user.id
+            playerID: this.props.auth.user.id,
+            level: this.state.level
         };
 
         console.log(this.props.auth.user.id);
@@ -58,8 +60,8 @@ class Create extends Component {
         return (
             <div className="container">
                 <div className="row">
-                    <div className="col s12 center-align white-text">
-                        <h4>Create a Character</h4>
+                    <div className="col s12 center-align cyan-text text-lighten-4">
+                        <h2 className="header">Create a Character</h2>
                         <h5>
                             As a player of the Starfinder Roleplaying Game, the first thing
                             you need to do is create a character. This is the in-world
@@ -162,7 +164,7 @@ class Create extends Component {
                                             <option value="Hylax">Hylax</option>
                                             <option value="Ibra">Ibra</option>
                                             <option value="Iomedae">Iomedae</option>
-                                            <option value="LaoShuPo">Lao Shu Po</option>
+                                            <option value="Lao Shu Po">Lao Shu Po</option>
                                             <option value="Nyarlathotep">Nyarlathotep</option>
                                             <option value="Oras">Oras</option>
                                             <option value="Pharasma">Pharasma</option>
@@ -172,15 +174,15 @@ class Create extends Component {
                                             <option value="Urgathoa">Urgathoa</option>
                                             <option value="Weydan">Weydan</option>
                                             <option value="Yaraesa">Yaraesa</option>
-                                            <option value="Zon-kuthon">Zon-Kuthon</option>
+                                            <option value="Zon-Kuthon">Zon-Kuthon</option>
                                         </optgroup>
                                         <optgroup label="Other Deities">
                                             <option value="Angradd">Angradd</option>
                                             <option value="Arshea">Arshea</option>
                                             <option value="Asmodeus">Asmodeus</option>
-                                            <option value="BlackButterfly">Black Butterfly</option>
+                                            <option value="Black Butterfly">Black Butterfly</option>
                                             <option value="Calistria">Calistria</option>
-                                            <option value="TheEldest">The Eldest</option>
+                                            <option value="The Eldest">The Eldest</option>
                                             <option value="Groetus">Groetus</option>
                                             <option value="Kadrical">Kadrical</option>
                                             <option value="Lamashtu">Lamashtu</option>
@@ -191,8 +193,8 @@ class Create extends Component {
                                         <optgroup label="Outer Gods">
                                             <option value="Azahoth">Azahoth</option>
                                             <option value="Nhimbaloth">Nhimbaloth</option>
-                                            <option value="Shub-niggurath">Shub-Niggurath</option>
-                                            <option value="Yog-sothoth">Yog-Sothoth</option>
+                                            <option value="Shub-Niggurath">Shub-Niggurath</option>
+                                            <option value="Yog-Sothoth">Yog-Sothoth</option>
                                         </optgroup>
                                         <optgroup label="Minor Powers & Demigods">
                                             <option value="Anyalaritus">Anyalaritus</option>

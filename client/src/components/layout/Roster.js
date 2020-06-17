@@ -35,13 +35,14 @@ class Roster extends Component {
         return (
             <div className="container">
                 <div className="row">
-                    <div className="col s12 center white-text">
-                        <h4>
-                            <b>Hey there,</b> {user.name.split(" ")[0]}
+                    <div className="col s12 center-align cyan-text text-lighten-4">
+                        <h4 className="header">
+                            <b>Welcome Starfinder</b> {user.name.split(" ")[0]}
                         </h4>
                         <h4>
                             Here's your Crew!
                         </h4>
+                        <hr/>
                         <br />
                         {this.state.charArray.map(character => {
                             if (character.identityStats.playerID === this.props.auth.user.id) {
@@ -54,9 +55,11 @@ class Roster extends Component {
                                         gender={character.identityStats.gender}
                                         alignment={character.identityStats.alignment}
                                         deity={character.identityStats.deity}
+                                        id={character._id}
+                                        key={character._id}
                                     />
                                 )
-                            } else return;
+                            } else return null;
                         })
                         }
 

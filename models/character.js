@@ -13,15 +13,13 @@ const CharacterSchema = new Schema({
             ref: "User",
         },
         class: {
-            name: {
-                type: String,
-                trim: true,
-            },
-            level: {
-                type: Number,
-                min: 1,
-                max: 20,
-            },
+            type: String,
+            trim: true,
+        },
+        level: {
+            type: Number,
+            min: 1,
+            max: 20,
         },
         race: String,
         size: {
