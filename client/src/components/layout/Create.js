@@ -79,51 +79,51 @@ class Create extends Component {
                                 <div className="input-field col m6 s12">
                                     <select onChange={this.onChange} value={this.state.race} className="validate white-text N/A transparent" name="race" id="race">
                                         <option value="" disabled>Choose your Race</option>
-                                        <option value="android">Android</option>
-                                        <option value="human">Human</option>
-                                        <option value="kasatha">Kasatha</option>
-                                        <option value="lashunta">Lashunta</option>
-                                        <option value="shirren">Shirren</option>
-                                        <option value="vesk">Vesk</option>
-                                        <option value="ysoki">Ysoki</option>
+                                        <option value="Android">Android</option>
+                                        <option value="Human">Human</option>
+                                        <option value="Kasatha">Kasatha</option>
+                                        <option value="Lashunta">Lashunta</option>
+                                        <option value="Shirren">Shirren</option>
+                                        <option value="Vesk">Vesk</option>
+                                        <option value="Ysoki">Ysoki</option>
                                     </select>
                                     <label htmlFor="race">Race</label>
                                 </div>
                                 <div className="input-field col m6 s12">
                                     <select onChange={this.onChange} value={this.state.class} className="validate white-text N/A transparent" name="class" id="class">
                                         <option value="" disabled>Choose your Class</option>
-                                        <option value="envoy">Envoy</option>
-                                        <option value="mechanic">Mechanic</option>
-                                        <option value="mystic">Mystic</option>
-                                        <option value="operative">Operative</option>
-                                        <option value="solarian">Solarian</option>
-                                        <option value="soldier">Soldier</option>
-                                        <option value="technomancer">Technomancer</option>
+                                        <option value="Envoy">Envoy</option>
+                                        <option value="Mechanic">Mechanic</option>
+                                        <option value="Mystic">Mystic</option>
+                                        <option value="Operative">Operative</option>
+                                        <option value="Solarian">Solarian</option>
+                                        <option value="Soldier">Soldier</option>
+                                        <option value="Technomancer">Technomancer</option>
                                     </select>
                                     <label htmlFor="Class">Class</label>
                                 </div>
                                 <div className="input-field col m6 s12">
                                     <select onChange={this.onChange} value={this.state.theme} className="validate white-text" name="theme" id="theme">
                                         <option value="" disabled>Choose your Theme</option>
-                                        <option value="ace_pilot">Ace Pilot</option>
-                                        <option value="bounty_hunter">Bounty Hunter</option>
-                                        <option value="icon">Icon</option>
-                                        <option value="mercenary">Mercenary</option>
-                                        <option value="outlaw">Outlaw</option>
-                                        <option value="priest">Priest</option>
-                                        <option value="scholar">Scholar</option>
-                                        <option value="spacefarer">Spacefarer</option>
-                                        <option value="xenoseeker">Xenoseeker</option>
-                                        <option value="themeless">Themeless</option>
+                                        <option value="Ace_pilot">Ace Pilot</option>
+                                        <option value="Bounty_hunter">Bounty Hunter</option>
+                                        <option value="Icon">Icon</option>
+                                        <option value="Mercenary">Mercenary</option>
+                                        <option value="Outlaw">Outlaw</option>
+                                        <option value="Priest">Priest</option>
+                                        <option value="Scholar">Scholar</option>
+                                        <option value="Spacefarer">Spacefarer</option>
+                                        <option value="Xenoseeker">Xenoseeker</option>
+                                        <option value="Themeless">Themeless</option>
                                     </select>
                                     <label htmlFor="theme">Theme</label>
                                 </div>
                                 <div className="input-field col m6 s12">
                                     <select onChange={this.onChange} value={this.state.gender} className="validate white-text" name="gender" id="gender">
                                         <option value="" disabled>Choose your Gender</option>
-                                        <option value="male">Male</option>
-                                        <option value="female">Female</option>
-                                        <option value="other">Other</option>
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                        <option value="Other">Other</option>
                                     </select>
                                     <label htmlFor="gender">Gender</label>
                                 </div>
@@ -153,67 +153,67 @@ class Create extends Component {
                                         <option value="" disabled>Choose your Deity</option>
                                         <option value="N/A">N/A</option>
                                         <optgroup label="Core Deities">
-                                            <option value="abadar">Abadar</option>
-                                            <option value="besmara">Besmara</option>
-                                            <option value="damoritosh">Damoritosh</option>
-                                            <option value="desna">Desna</option>
-                                            <option value="theDevourer">The Devourer</option>
-                                            <option value="eloritu">Eloritu</option>
-                                            <option value="hylax">Hylax</option>
-                                            <option value="ibra">Ibra</option>
-                                            <option value="iomedae">Iomedae</option>
-                                            <option value="laoShuPo">Lao Shu Po</option>
-                                            <option value="nyarlathotep">Nyarlathotep</option>
-                                            <option value="oras">Oras</option>
-                                            <option value="pharasma">Pharasma</option>
-                                            <option value="sarenrae">Sarenrae</option>
-                                            <option value="talavet">Talavet</option>
-                                            <option value="triune">Triune</option>
-                                            <option value="urgathoa">Urgathoa</option>
-                                            <option value="weydan">Weydan</option>
-                                            <option value="yaraesa">Yaraesa</option>
-                                            <option value="zon-kuthon">Zon-Kuthon</option>
+                                            <option value="Abadar">Abadar</option>
+                                            <option value="Besmara">Besmara</option>
+                                            <option value="Damoritosh">Damoritosh</option>
+                                            <option value="Desna">Desna</option>
+                                            <option value="The Devourer">The Devourer</option>
+                                            <option value="Eloritu">Eloritu</option>
+                                            <option value="Hylax">Hylax</option>
+                                            <option value="Ibra">Ibra</option>
+                                            <option value="Iomedae">Iomedae</option>
+                                            <option value="LaoShuPo">Lao Shu Po</option>
+                                            <option value="Nyarlathotep">Nyarlathotep</option>
+                                            <option value="Oras">Oras</option>
+                                            <option value="Pharasma">Pharasma</option>
+                                            <option value="Sarenrae">Sarenrae</option>
+                                            <option value="Talavet">Talavet</option>
+                                            <option value="Triune">Triune</option>
+                                            <option value="Urgathoa">Urgathoa</option>
+                                            <option value="Weydan">Weydan</option>
+                                            <option value="Yaraesa">Yaraesa</option>
+                                            <option value="Zon-kuthon">Zon-Kuthon</option>
                                         </optgroup>
                                         <optgroup label="Other Deities">
-                                            <option value="angradd">Angradd</option>
-                                            <option value="arshea">Arshea</option>
-                                            <option value="asmodeus">Asmodeus</option>
-                                            <option value="blackButterfly">Black Butterfly</option>
-                                            <option value="calistria">Calistria</option>
-                                            <option value="theEldest">The Eldest</option>
-                                            <option value="groetus">Groetus</option>
-                                            <option value="kadrical">Kadrical</option>
-                                            <option value="lamashtu">Lamashtu</option>
-                                            <option value="lissala">Lissala</option>
-                                            <option value="nylessa">Nylessa</option>
-                                            <option value="shelyn">Shelyn</option>
+                                            <option value="Angradd">Angradd</option>
+                                            <option value="Arshea">Arshea</option>
+                                            <option value="Asmodeus">Asmodeus</option>
+                                            <option value="BlackButterfly">Black Butterfly</option>
+                                            <option value="Calistria">Calistria</option>
+                                            <option value="TheEldest">The Eldest</option>
+                                            <option value="Groetus">Groetus</option>
+                                            <option value="Kadrical">Kadrical</option>
+                                            <option value="Lamashtu">Lamashtu</option>
+                                            <option value="Lissala">Lissala</option>
+                                            <option value="Nylessa">Nylessa</option>
+                                            <option value="Shelyn">Shelyn</option>
                                         </optgroup>
                                         <optgroup label="Outer Gods">
-                                            <option value="azahoth">Azahoth</option>
-                                            <option value="nhimbaloth">Nhimbaloth</option>
-                                            <option value="shub-niggurath">Shub-Niggurath</option>
-                                            <option value="yog-sothoth">Yog-Sothoth</option>
+                                            <option value="Azahoth">Azahoth</option>
+                                            <option value="Nhimbaloth">Nhimbaloth</option>
+                                            <option value="Shub-niggurath">Shub-Niggurath</option>
+                                            <option value="Yog-sothoth">Yog-Sothoth</option>
                                         </optgroup>
                                         <optgroup label="Minor Powers & Demigods">
-                                            <option value="anyalaritus">Anyalaritus</option>
-                                            <option value="apholine">Apholine</option>
-                                            <option value="aroggus">Aroggus</option>
-                                            <option value="duellona">Duellona</option>
-                                            <option value="feronia">Feronia</option>
-                                            <option value="ghatanothoa">Ghatanothoa</option>
-                                            <option value="inkariax">Inkariax</option>
-                                            <option value="kaikyton">Kaikyton</option>
-                                            <option value="malikah">Malikah</option>
-                                            <option value="morrobahn">Morrobahn</option>
-                                            <option value="occhiorasoi">Occhiorasoi</option>
-                                            <option value="ragadahn">Ragadahn</option>
-                                            <option value="ragathiel">Ragathiel</option>
-                                            <option value="vevelor">Vevelor</option>
+                                            <option value="Anyalaritus">Anyalaritus</option>
+                                            <option value="Apholine">Apholine</option>
+                                            <option value="Aroggus">Aroggus</option>
+                                            <option value="Duellona">Duellona</option>
+                                            <option value="Feronia">Feronia</option>
+                                            <option value="Ghatanothoa">Ghatanothoa</option>
+                                            <option value="Inkariax">Inkariax</option>
+                                            <option value="Kaikyton">Kaikyton</option>
+                                            <option value="Malikah">Malikah</option>
+                                            <option value="Morrobahn">Morrobahn</option>
+                                            <option value="Occhiorasoi">Occhiorasoi</option>
+                                            <option value="Ragadahn">Ragadahn</option>
+                                            <option value="Ragathiel">Ragathiel</option>
+                                            <option value="Vevelor">Vevelor</option>
                                         </optgroup>
                                         <optgroup label="Lost Gods">
-                                            <option value="aroden">Aroden</option>
-                                            <option value="rovagug">Rovagug</option>
-                                            <option value="torag">Torag</option>
+                                            <option value="Aroden">Aroden</option>
+                                            <option value="Rovagug">Rovagug</option>
+                                            <option value="Torag">Torag</option>
                                         </optgroup>
                                     </select>
                                     <label htmlFor="deity">Deity</label>

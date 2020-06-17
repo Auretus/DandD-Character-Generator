@@ -7,8 +7,8 @@ var db = require("../../models/Character");
 
 //GET route for getting all characters
 router.get("/", (req, res) => {
-    console.log(res);
-    db.findAll({})
+    //console.log(res);
+    db.find({})
         .then(allCharacters =>{
             res.json(allCharacters);
         })
@@ -16,7 +16,7 @@ router.get("/", (req, res) => {
 
 //GET route for getting a single character by id
 router.get("/:id", (req, res) => {
-    console.log(res);
+    //console.log(res);
     db.findOne({
         where: {
             _id: req.params.id

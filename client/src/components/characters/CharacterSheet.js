@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { logoutUser } from '../../actions/authActions';
-import M from "materialize-css";
-import apiHelper from "../../utils/apiHelper"
+//import { update } from '../../../../models/User';
+//import M from "materialize-css";
+//import apiHelper from "../../utils/apiHelper"
 
 class CharacterSheet extends Component {
     state = {
@@ -12,7 +13,7 @@ class CharacterSheet extends Component {
 
     onLogoutClick = e => {
         e.preventDefault();
-        this.props.logoutUser();  
+        this.props.logoutUser();
     }
 
     onChange = e => {
@@ -22,39 +23,36 @@ class CharacterSheet extends Component {
     onSubmit = e => {
         e.preventDefault();
 
-        const newCharacter = {
-            // character_name: this.state.character_name,
-            // race: this.state.race,
-            // class: this.state.class,
-            // theme: this.state.theme,
-            // gender: this.state.gender,
-            // alignment: this.state.alignment,
-            // deity: this.state.deity,
-            // playerID: this.props.auth.user.id
+        const updateCharacter = {
+            //going to add more to this later
+            character_name: this.state.character_name,
+            race: this.state.race,
+            class: this.state.class,
+            theme: this.state.theme,
+            gender: this.state.gender,
+            alignment: this.state.alignment,
+            deity: this.state.deity,
+            playerID: this.props.auth.user.id
         };
-
-        console.log(this.props.auth.user.id);
-
-    //    let db = apiHelper.postCharacters(newCharacter, this.props.auth.user.id)
-    //         .then(req => console.log(req));
-        
+        console.log(updateCharacter);
     }
-    
-    componentDidMount(){
-        let characterArray = db.find({ playerID: this.props.auth.user.id });
-        console.log(characterArray);
-        this.setState({
-            characterResults: characterArray
-        })
-    }
-    
 
+
+    // componentDidMount() {
+    //     let db = function () {
+    //         apiHelper.postCharacters(updateCharacter, this.props.auth.user.id)
+    //             .then(req => console.log(req));
+    //         console.log(characterArray);
+
+    //         this.setState({
+    //             characterResults: characterArray
+    //         })
+    //     }
+    // }
 
 
     render() {
         return (
-
-
             <div className="container">
                 <div className="row cyan-text text-lighten-4">
                     <div>
@@ -62,7 +60,7 @@ class CharacterSheet extends Component {
                             <option value="" disabled>Choose your Character</option>
                             {this.state.characterResults.map(option => {
                                 return (
-                                    <option value={option.character_name}>{option.character_name}</option> 
+                                    <option value={option.character_name}>{option.character_name}</option>
                                 )
                             })}
                         </select>
@@ -76,42 +74,42 @@ class CharacterSheet extends Component {
                         <h4 className="deep-orange darken-2 center-align">Ability Scores</h4>
                         <div className="col s6">
                             <p className="center-align"><b>Strength:</b> 10</p>
-                            <br/>
+                            <br />
                             <p className="center-align"><b>Dexterity:</b> 10</p>
-                            <br/>
+                            <br />
                             <p className="center-align"><b>Consitution:</b> 10</p>
-                            <br/>
+                            <br />
                         </div>
                         <div className="col s6">
                             <p className="center-align"><b>Intelligence:</b> 10</p>
-                            <br/>
+                            <br />
                             <p className="center-align"><b>Wisdom:</b> 10</p>
-                            <br/>
+                            <br />
                             <p className="center-align"><b>Charisma:</b> 10</p>
-                            <br/>
+                            <br />
                         </div>
                     </div>
                     <div className="row">
                         <h4 className="deep-orange darken-2 center-align">Basic Info</h4>
                         <div className="col s6">
                             <p className="center-align"><b>Class:</b> Envoy</p>
-                            <br/>
+                            <br />
                             <p className="center-align"><b>Race:</b> Human</p>
-                            <br/>
+                            <br />
                             <p className="center-align"><b>Theme:</b> Ace Pilot</p>
-                            <br/>
+                            <br />
                             <p className="center-align"><b>Homeworld:</b> </p>
-                            <br/>
+                            <br />
                         </div>
                         <div className="col s6">
                             <p className="center-align"><b>Gender:</b> Other</p>
-                            <br/>
+                            <br />
                             <p className="center-align"><b>Alignment:</b> Lawfully Good</p>
-                            <br/>
+                            <br />
                             <p className="center-align"><b>Deity:</b> N/A</p>
-                            <br/>
+                            <br />
                             <p className="center-align"><b>Speed:</b> </p>
-                            <br/>
+                            <br />
                         </div>
                     </div>
                     <div className="row">
@@ -139,11 +137,11 @@ class CharacterSheet extends Component {
                             Logout
                         </button>
                     </div>
-                    <br /> 
+                    <br />
                 </div>
-            </div>   
-            
-                
+            </div>
+
+
         )
     }
 }
