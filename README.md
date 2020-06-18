@@ -52,7 +52,7 @@ Login:
 
 New User Registration
 
-![new user registration](./assets/login-screen.png)
+![new user registration](./assets/new-user-registration-screen.png)
 
 System Reference Guide
 
