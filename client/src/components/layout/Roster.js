@@ -66,7 +66,7 @@ class Roster extends Component {
 
                     </div>
                 </div>
-                <div className="buttonDiv center">
+                <div className="buttonDiv center col s12 hide-on-med-and-up">
                     <button className="btn btn-large waves-effect waves-light hoverable blue white-text" style={{
                         width: "150px",
                         borderRadius: "3px",
