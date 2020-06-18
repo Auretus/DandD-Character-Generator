@@ -14,7 +14,10 @@ class Landing extends Component {
                             Are you ready to join the <b>Campaign</b>?
                         </h4>
                         <p className="flow-text white-text">
-                            Create your character and shoot for the stars!
+                            Login or Enlist to create your character and shoot for the stars!
+                        </p>
+                        <p className="flow-text white-text">
+                            Or follow our Reference Guide at the Top Left of the screen!
                         </p>
                         <br />
                         <div className="col s6">
@@ -35,6 +38,8 @@ class Landing extends Component {
                                 Login
                             </Link>
                         </div>
+                        <br/>
+                        
                     </div>
                 </div>
                 <br/>

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { logoutUser } from '../../actions/authActions';
 import M from "materialize-css";
-import apiHelper from "../../utils/apiHelper"
+import apiHelper from "../../utils/apiHelper";
 
 class Create extends Component {
     constructor() {
@@ -38,11 +38,16 @@ class Create extends Component {
             playerID: this.props.auth.user.id,
             level: this.state.level
         };
-
-        console.log(this.props.auth.user.id);
-
-        apiHelper.createCharacter(newCharacter, this.props.auth.user.id)
+        
+        if (!newCharacter.character_name || !newCharacter.race || !newCharacter.class || !newCharacter.theme || !newCharacter.gender || !newCharacter.alignment || !newCharacter.deity) {
+            M.toast({html: "Please fill out all fields before proceeding!"})
+            return
+        } else {
+            apiHelper.createCharacter(newCharacter, this.props.auth.user.id)
             .then(req => console.log(req));
+        
+            M.toast({html: "Your Character has been saved! To view character, visit Your Roster!"}) 
+        }
         
     }
 
@@ -72,7 +77,7 @@ class Create extends Component {
                             she can use during her adventures.
                         </h5>
                         <br/>
-                        <form className="col s12" onSubmit={this.onSubmit}>
+                        <form className="col s12" onSubmit={this.onSubmit} id="character_form">
                             <div className="row">
                                 <div className="input-field col s12">
                                     <input onChange={this.onChange} value={this.state.character_name} name="character_name" id="character_name" type="text" className=" white-text" />
@@ -230,7 +235,7 @@ class Create extends Component {
                     </div>
                 </div>
                 <br />
-                <div className="buttonDiv center col s12">
+                <div className="buttonDiv center col s12 hide-on-med-and-up">
                     <button className="btn btn-large waves-effect waves-light hoverable blue white-text" style={{
                         width: "150px",
                         borderRadius: "3px",

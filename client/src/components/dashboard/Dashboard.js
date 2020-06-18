@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { logoutUser } from '../../actions/authActions';
+import { Link } from "react-router-dom";
 // import CharDiv from "../layout/Roster";
 
 class Dashboard extends Component {
@@ -33,16 +34,24 @@ class Dashboard extends Component {
                             of the galaxy, one adventure at a time.
                         </h5>
                         <br/>
-                        <div className="buttonDiv center">
-                            <button className="btn btn-large waves-effect waves-light hoverable blue white-text" style={{
-                                width: "150px",
+                        <div className="col s6">
+                            <Link to="/create" className="btn btn-large waves-effect waves-light hoverable blue darken-4" style={{
+                                
                                 borderRadius: "3px",
-                                letterSpacing: "1.5px",
-                            }} onClick={this.onLogoutClick}>
-                                Logout
-                            </button>
+                                letterSpacing: "1.5px"
+                            }}>
+                                Create a Character
+                            </Link>
                         </div>
-                        <br />
+                        <div className="col s6">
+                            <Link to="/roster" className="btn btn-large waves-effect hoverable blue darken-4" style={{
+                                
+                                borderRadius: "3px",
+                                letterSpacing: "1.5px"
+                            }}>
+                                Your Roster
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -1,10 +1,21 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { logoutUser } from '../../actions/authActions';
 
 
 class Navbar extends Component {
+    onLogoutClick = e => {
+        e.preventDefault();
+        this.props.logoutUser();
+    }
+
     render() {
+
+        // const { user } = this.props.auth;
+
         return (
             <div className="row">
                 <nav>
@@ -24,8 +35,14 @@ class Navbar extends Component {
                         
                         
                         <ul className="hide-on-med-and-down right">
-                            <li><Link to="/create">Create a Character</Link></li>
-                            <li><Link to="/roster">Your Roster</Link></li>
+                            <li><Link to="/create">
+                                Create a Character</Link></li>
+                            <li><Link to="/roster">
+                                Your Roster</Link></li>
+                            <li><Link to="/login">
+                                Login</Link></li>
+                            <li><Link onClick={this.onLogoutClick}>
+                                Logout</Link></li>  
                         </ul>
                         
                     </div>
@@ -87,4 +104,11 @@ class Navbar extends Component {
     }
 }
 
-export default Navbar;
+Navbar.propTypes = {
+    logoutUser: PropTypes.func.isRequired,
+    auth: PropTypes.object.isRequired
+};
+
+const mapStateToProps = state => ({ auth: state.auth });
+
+export default connect(mapStateToProps, { logoutUser })(Navbar);
