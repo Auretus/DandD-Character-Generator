@@ -1,6 +1,6 @@
 
 # StarfinderStarter
-[![GitHub license](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/undefined/starfinderstarter)
+[![GitHub license](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/Auretus/DandD-Character-Generator/)
 
 ## Description
 
@@ -21,6 +21,7 @@ Starfinder Starter is here to make that process easy and painless, to get the ga
 
 * [License](#license)
 
+* [Screenshots](#screenshots)
 
 
 ## Installation
@@ -44,5 +45,23 @@ Once logged in, you can navigate to any of the pages on the navbar at the top le
 MIT
   
 
+## Screenshots
+Login:
 
+![login screen](./assets/login-screen.png)
 
+New User Registration
+
+![new user registration](./assets/login-screen.png)
+
+System Reference Guide
+
+![reference guide](./assets/login-screen.png)
+
+Character Creation
+
+![character creation](./assets/character-creation.png)
+
+Roster
+
+![character roster](./assets/roster-screen.png)

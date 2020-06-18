@@ -1,7 +1,7 @@
 {
-  "name": "mern-passport-app",
+  "name": "starfinder-starter",
   "version": "1.0.0",
-  "description": "MERN Passport Example App",
+  "description": "Starfinder Starter",
   "main": "server.js",
   "scripts": {
     "start": "node server.js && npm run client",
